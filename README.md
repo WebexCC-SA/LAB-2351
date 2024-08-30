@@ -1,4 +1,4 @@
-# Lab Guide for WebexOne Lab LABXXX-1234
+# Lab Guide for WebexOne Lab LAB-2351
 
 Web guide link: https://webexcc-sa.github.io/LAB-2351/
 
