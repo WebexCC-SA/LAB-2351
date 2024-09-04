@@ -1,7 +1,7 @@
 ---
 site_name: LAB-2351 - Webex Contact Center Customer Experience Voice # This must begin with the session ID
 site_description: LAB-2351 - Webex Contact Center Customer Experience Voice # must be same as "site_name"
-site_author: John Doe
+site_author: Karthik Sundaram, Rohit Harsh
 copyright: Copyright &copy; 2024 Cisco
 theme:
   name: material
