@@ -80,7 +80,15 @@ nav:
   - Home: index.md
   - Lab:
       - Overview: overview.md
-      - Lab 1 - Getting Started: lab1_getting_started.md
-      - Lab 2 - Overview: The big picture.md 
+      - Lab 0 - Getting Started: lab1_getting_started.md
+      - Lab 1 - Voice preconfiguration: voice_configuration.md
+      - Lab 2 - Teams-based Routing: Teams_based_routing.md
+      - Lab 3 - Skills-based Routing: Skills_based_routing.md
+      - Lab 4 - Preferred agent Routing: preferred_agent.md
+      - Lab 5 - Digital Channel Preconfiguration: Lab1_Preconfiguration.md
+      - Lab 6 - Chat:  Lab3_Chat.md
+      - Lab 7 - SMS: Lab5_SMS.md
+      - Lab 8 - WhatsApp (Optional): Lab6_Whatsapp.md
+      - Lab 9 - Email (Optional): Lab2_Email.md
       - Conclusion: conclusion.md
   - Topologies: topologies.md
