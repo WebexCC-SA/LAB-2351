@@ -5,6 +5,7 @@ site_author: John Doe
 copyright: Copyright &copy; 2024 Cisco
 theme:
   name: material
+  #name: mkdocs
   features:
     - navigation.tabs
     - navigation.tabs.sticky
@@ -39,10 +40,10 @@ extra_css:
   - stylesheets/extra.css
 plugins:
   - search
-  - with-pdf:
-      cover_title: LABXXX-1234
-      cover_subtitle: My famous WebexOne Lab
-      cover_logo: template_assets/wx1Splash_new.gif
+#  - with-pdf:
+#      cover_title: LABXXX-1234
+#      cover_subtitle: My famous WebexOne Lab
+#      cover_logo: template_assets/wx1Splash_new.gif
   - glightbox:
       touchNavigation: true
       loop: false
@@ -65,16 +66,16 @@ markdown_extensions:
   - footnotes
   - meta
   - tables
-  - pymdownx.details
-  - pymdownx.emoji:
-      emoji_index: !!python/name:materialx.emoji.twemoji
-      emoji_generator: !!python/name:materialx.emoji.to_svg
-  - pymdownx.highlight
-  - pymdownx.superfences:
-      custom_fences:
-        - name: mermaid
-          class: mermaid
-          format: !!python/name:pymdownx.superfences.fence_code_format
+#  - pymdownx.details
+#  - pymdownx.emoji:
+#      emoji_index: !!python/name:materialx.emoji.twemoji
+#      emoji_generator: !!python/name:materialx.emoji.to_svg
+#  - pymdownx.highlight
+#  - pymdownx.superfences:
+#      custom_fences:
+#        - name: mermaid
+#          class: mermaid
+#          format: !!python/name:pymdownx.superfences.fence_code_format
 nav:
   - Home: index.md
   - Lab:
