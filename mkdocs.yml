@@ -80,15 +80,13 @@ nav:
   - Home: index.md
   - Lab:
       - Overview: overview.md
-      - Lab 0 - Getting Started: lab1_getting_started.md
-      - Lab 1 - Voice preconfiguration: voice_configuration.md
-      - Lab 2 - Teams-based Routing: Teams_based_routing.md
-      - Lab 3 - Skills-based Routing: Skills_based_routing.md
-      - Lab 4 - Preferred agent Routing: preferred_agent.md
-      - Lab 5 - Digital Channel Preconfiguration: Lab1_Preconfiguration.md
-      - Lab 6 - Chat:  Lab3_Chat.md
-      - Lab 7 - SMS: Lab5_SMS.md
-      - Lab 8 - WhatsApp (Optional): Lab6_Whatsapp.md
-      - Lab 9 - Email (Optional): Lab2_Email.md
+      - Lab 1 - Getting to callers using teams: teams.md 
+      - Lab 2 - Call distribution groups: cdg.md
+      - Lab 3 - Rank queues: rank.md
+      - Lab 4 - Attributes and Skills based routing: sbr.md
+      - Lab 5 - Skills relaxation: relax.md
+      - Lab 6 - Routing based on CC metrics - APIs from flow: api.md
+      - Lab 7 - Routing based on past experience - Auto CSAT routing: autocsat.md
       - Conclusion: conclusion.md
-  - Topologies: topologies.md
+  - Topology: topologies.md  
+
