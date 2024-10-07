@@ -80,6 +80,7 @@ nav:
   - Home: index.md
   - Lab:
       - Overview: overview.md
+      - Lab 0 - Preconfiguration - Getting to know your setup: voice_configuration.md
       - Lab 1 - Getting to callers using teams: teams.md 
       - Lab 2 - Call distribution groups: cdg.md
       - Lab 3 - Rank queues: rank.md
