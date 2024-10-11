@@ -153,17 +153,11 @@ As part of this setup, when agents log in to the system, they choose the team to
 Under **USER MANAGEMENT** in the left pane navigate to **Teams** and click **Create Team.**
 Create the TechnicalSupport_<w class = "attendee_out">attendeeID</w> team where <w class = "attendee_out">attendeeID</w> is your pod ID. Choose the EastCoast_<w class = "attendee_out">attendeeID</w> site and ![Team](../assets/teams/team_1.png) and **Create** the team.
 
-![Team](../assets/teams/team_1.png)
-
-![Team](../assets/teams/team_2.png)
-
 On the next screen, click **Done**
 
 Now create another TechnicalSupport_<w class = "attendee_out">attendeeID</w> team and assign it to the WestCoast site
 
 ![Team](../assets/teams/team_3.png)
-
-![Team](../assets/teams/team_4.png)
 
 #### Setup Auxiliary codes
 
@@ -178,10 +172,6 @@ Create one or **TechncialSupport**
 ![Idle code](../assets/teams/19.png)
 
 Click `Create`
-
-Create another one for **BillingInquiry**
-
-![Idle code](../assets/teams/20.png)
 
 Once these wrap-up codes are created we need to make them available to agents. This is done through `Desktop Profiles` that the agents get assigned
 
@@ -229,6 +219,8 @@ Remember to login using the below configurations
 
 ![Agent login](../assets/teams/12.png)
 
+Accept the emergency calling notification. Allow access to the audio devices the first time you login.
+
 Once logged in click on the Agent initials on the top right to verify your successful login
 
 ![Post agent login](../assets/teams/13.png)
@@ -243,16 +235,6 @@ A Queue is like a virtual ordered line that callers are placed in while waiting 
 
 Once we’ve defined queues for different call types, we need to assign teams to handle those queues. This is done using Call Distribution Group (CDG). The Call Distribution Group allows us to assign one or more teams to a single queue. For example, both the technical teams could be associated to their respective queues. 
 
-**Why CDGs matter**
-
-This setup ensures that when a caller enters the East Coast Technical Queue, they are directed to agents in the East Coast. If you want to get more flexible, you can assign multiple teams to one queue. For instance, if the East Coast queue is often overloaded, another team can be added during configuration to expand the pool of agents.  
-
-But what if the East Coast queue is free, whereas West Coast Queue is filling up. This is where **Rank Queues** comes into play. We can assign a priority to the queues from the perspective of the team. We can let teams choose the order in which they will service the queues they are responsible for. For example, the East Coast Technical Team will always prioritize their own queue first, but if they have no calls waiting, they can assist with the West Coast Queue. 
-
-**Why Rank Queues Matter**
-
-This setup makes sure the team focusses on their specialized tasks first. But in the case of idle time, they can help with other queues, like the West Coast Queue, ensuring maximum efficiency across the teams. 
-
 **Create Queues**
 
 Login into Control Hub https://admin.webex.com with your administrator credentials to begin our configuration.
@@ -264,15 +246,14 @@ Create the <w class = "attendee_out">attendeeID</w>Q_TechSupport with the below 
 
 ![queue](../assets/teams/q_2.png)
 
-Now click **Create Group** under **Call Distribution**
+!!! Call_Distribution
+    This is a collection of one or more groups that will each contain one or more teams of agents who will answer calls from this queue.
 
-![queue](../assets/teams/q_3.png)
+Since our queue is for TechnicalSupport_East, we would like our team from the East coast to answer the calls first. 
 
-Click **Create Group** again and add the West Coast Team as a backup.
+Configure the **Group** like below
 
-Select **Priority** as `2` and for **Switch to this group after** select `10` seconds
-
-![queue](../assets/teams/q_4.png)
+![cdg](../assets/teams/cdg_1.png)
 
 Click **Save**
 
@@ -280,22 +261,57 @@ Under **Advanced Settings**, configure the parameters as below and click **Creat
 
 ![queue](../assets/teams/q_5.png)
 
+
 Repeat the same steps to configure the Technical Support Queue for the West Coast. 
 
-![queue](../assets/teams/q_6.png)
+![cdg](../assets/teams/cdg_1.png)
 
-**Rank Queues**
+We now have two queues - TechSupport_East and TechSupport_West. Both have the east and west coast technical support teams configured under group 1
 
-Under **USER MANAGEMENT** click on **Teams** and search for your TechnicalSupport_<w class = "attendee_out">attendeeID</w> team
+![cdg](../assets/teams/cdg_3.png)
 
-You will see two teams of the same name but for different sites. Click on one team and setup Rank queues
+**Login agents**
 
-![queue](../assets/teams/rank_1.png)
+Before we login agents we will make the right agents are members of the required teams
 
-Click **Select queues**
+Navigate to **USER MANAGEMENT** - **Contact Center Users**
 
-Select both the queues created above and then click on Select the queue.
+Search for Agent<w class = "attendee_out">attendeeID</w> 
 
-For the East Coast team, pick the priority of 1 for the East Coast queue and priority 2 for the West Coast team. 
+![cdg](../assets/teams/cdg_4.png)
 
-![queue](../assets/teams/rank_2.png)
+This shows the agents and the teams they belong in. 
+
+
+Verify that your agents are still logged in
+
+**Flow Designer**
+
+Open the Flow MainFlow_<w class = "attendee_out">attendeeID</w> from **CUSTOMER EXPERIENCE** - **Flows**
+
+In order to invoke this flow one needs to assign this flow to an entry point. Navigate to **CUSTOMER EXPERIENCE** - **Channels** and  click **Create Channel**
+
+![channels](../assets/teams/channels_1.png)
+
+Use the Flow you will be using in the **Routing Flow** field. Look up the Entry point Dial Number (EP DN) in the email you received (subject: WebexCC: Lab Access)
+
+setup the EP DN as the **Support Number** 
+
+![channels](../assets/teams/channels_2.gif)
+
+Click **Create**
+
+**Time to make some phone calls**
+
+From any number at your disposal, call the EP DN to invoke the Flow. Choose the option 1 for Teams based routing. Irrespective of which queue you are park the caller into the caller will be answered by an agent in the East or West team. You can test this by placing one of the agents into the "meeting" state from "available" and try calling.
+
+Then try again by placing the other one in "meeting"
+
+#### Summary
+
+Both teams are made available for the callers simultaneously. We did not prioritize one team over the other. For that let's try the Call Distribution Group
+
+
+
+
+
