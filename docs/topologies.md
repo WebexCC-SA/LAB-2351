@@ -1,5 +1,5 @@
 # Lab topologies
 
-<figure markdown>
-  ![ACI](./assets/aci.png)
-</figure>
+#### Teams Based Routing
+
+![topology](../assets/topologies/1.png)
