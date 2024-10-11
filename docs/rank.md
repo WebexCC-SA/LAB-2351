@@ -73,3 +73,49 @@ document.forms["attendee-form"][1].value = localStorage.getItem("attendeeID") ||
 
 
 ## Learning Objectives
+
+But what if the East Coast queue is free, whereas West Coast Queue is filling up. This is where **Rank Queues** comes into play. We can assign a priority to the queues from the perspective of the team. We can let teams choose the order in which they will service the queues they are responsible for. For example, the East Coast Technical Team will always prioritize their own queue first, but if they have no calls waiting, they can assist with the West Coast Queue. 
+
+**Why Rank Queues Matter**
+
+This setup makes sure the team focusses on their specialized tasks first. But in the case of idle time, they can help with other queues, like the West Coast Queue, ensuring maximum efficiency across the teams. 
+
+
+#### Configuring Rank queues
+
+Let us go back to how we setup the teams in the call distribution groups under the queues for east and west
+
+![cdg](../assets/teams/cdg_3.png)
+
+![cdg](../assets/cdg/cdg_6.png)
+
+Do this by editing the **Group** for both queues - <w class = "attendee_out">attendeeID</w>_TechSupport_East and <w class = "attendee_out">attendeeID</w>_TechSupport_West
+
+Now that you have adjusted the teams to both be available to the queue at the same time, we need to provide the order in which the queues will be serviced by each team
+
+Navigate to **USER MANAGEMENT** - **Teams** and look for your team. Scroll down to the **Queue Ranking** section and configure the East team as below
+
+![rank](../assets/rank/rank_2.png)
+
+Now repeat the same for the West team but reverse the rank
+
+![rank](../assets/rank/rank_1.png)
+
+This configuration allows the teams to operate like below
+
+![rank](../assets/rank/rank_3.png)
+
+!!! Note
+    Both teams see the **same** two queues and the contacts in them. 
+
+This is a harder test to simulate with one phone call. Please request help from your lab proctor if you would like to try this.
+
+The calls to the East queue will be handled first by the East team. The same applies to the West team. If all calls in the East queue were drained and the West queue looked like below
+
+![rank](../assets/rank/rank_4.png)
+
+Then the two remaining contacts will be handled by **both** the East and West teams since the East team has no contacts left in the East queue
+
+#### Summary
+
+We have organized agents by teams and seen different ways to prioritize callers to some agents and how teams can choose their own priority to handle their primary task and also 'help' without affecting their primary objectives. We will now move to elevate customer experience by personalization of contacts and finding the best possible service for them

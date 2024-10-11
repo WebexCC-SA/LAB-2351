@@ -74,42 +74,54 @@ document.forms["attendee-form"][1].value = localStorage.getItem("attendeeID") ||
 
 ## Learning Objectives
 
+We've seen that groups of agents in teams can be associated with queues to help service callers. In this exercise we will adjust how the teams are organized to improve the chances that the caller will speak to an agent **in a team** that we desire. 
 
 **Why CDGs matter**
 
 This setup ensures that when a caller enters the East Coast Technical Queue, they are directed to agents in the East Coast. If you want to get more flexible, you can assign multiple teams to one queue. For instance, if the East Coast queue is often overloaded, another team can be added during configuration to expand the pool of agents.  
 
-But what if the East Coast queue is free, whereas West Coast Queue is filling up. This is where **Rank Queues** comes into play. We can assign a priority to the queues from the perspective of the team. We can let teams choose the order in which they will service the queues they are responsible for. For example, the East Coast Technical Team will always prioritize their own queue first, but if they have no calls waiting, they can assist with the West Coast Queue. 
+Navigate to **Queues** and to the <w class = "attendee_out">attendeeID</w>_TechnicalSupport_East and to  **Create Group** under **Call Distribution**
 
-**Why Rank Queues Matter**
+Expand the **Group**
 
-This setup makes sure the team focusses on their specialized tasks first. But in the case of idle time, they can help with other queues, like the West Coast Queue, ensuring maximum efficiency across the teams. 
+![cdg](../assets/cdg/cdg_6.png)
 
-Now click **Create Group** under **Call Distribution**
+Edit the west coast team out from Group 1 (we are in the East Coast queue). Now add a second group
 
-![queue](../assets/teams/q_3.png)
-
-!!! Note
-    There are two teams of the same name! They are, however, in different sites. The same function can be performed in different geographies or locations
-
-Click **Create Group** again and add the West Coast Team as a backup.
+Click **Create Group** again and 
 
 Select **Priority** as `2` and for **Switch to this group after** select `10` seconds
 
 ![queue](../assets/teams/q_4.png)
 
-**Rank Queues**
+Now the assignment will look like this
 
-Under **USER MANAGEMENT** click on **Teams** and search for your TechnicalSupport_<w class = "attendee_out">attendeeID</w> team
+![cdg](../assets/cdg/cdg_7.png)
 
-You will see two teams of the same name but for different sites. Click on one team and setup Rank queues
+Repeat the same for <w class = "attendee_out">attendeeID</w>_TechnicalSupport_West queue 
 
-![queue](../assets/teams/rank_1.png)
+Now we have 
 
-Click **Select queues**
+![cdg](../assets/cdg/cdg_8.png)
 
-Select both the queues created above and then click on Select the queue.
+Calls will be offered to the team in Group 1 for 10s **before** they are presented to agents in group 2
 
-For the East Coast team, pick the priority of 1 for the East Coast queue and priority 2 for the West Coast team. 
+Make some phone calls, place the required agents in a not-available state and test this. For example, place call while an agent in group 1 is not available but an agent in group 2 is. The call will not be presented to the agent in group 2 until the 10 second timer has expired. In this fashion you can add many other agent teams to service the caller after a set time interval. 
 
-![queue](../assets/teams/rank_2.png)
+!!! Note 1
+    Every call distribution team expansion that happens is occurring for **a single call**. This way the treatment for every call can be programmed to make agents available based on your business needs. This is a common strategy to bring more agents to the caller. Some contact centers allow agent skills to be reprogrammed (re-skill) to handle calls they would not usually but that re-skill will be permanent until changed again. 
+
+!!! Note 2
+    Every team that you bring to the caller in queue **must** be associated with the queue during provisioning
+
+What if we do not like this wait? Agents in the team in the second group may be available at the same time when the call was offered to group 1. Why keep the caller waiting for 10s while agents are already available in group 2?
+
+But, isn't that what we did in the previous lab? We had both teams offered the call **simultaneously** 
+
+![cdg](../assets/teams/cdg_3.png)
+
+While we do that we also want to **prioritize** the West team to answer calls from the west queue **first** before we answer calls in the east queue. Remember, both teams are servicing both queues. So far, it has not been possible to do this without introducing a wait time between the groups. And even if we do, the west team could receive a call from the east queue that was waiting for longer even though a call is waiting in the west queue.
+
+### Summary
+
+We see that the expansion of call distribution groups is an elegant way to offer more agents to handle the caller, call-by-call. This eliminates the need to re-skill agents reactively. But, the administrator would like to let each team handle callers from their region **first** before they handle calls for others
