@@ -118,4 +118,9 @@ Then the two remaining contacts will be handled by **both** the East and West te
 
 #### Summary
 
-We have organized agents by teams and seen different ways to prioritize callers to some agents and how teams can choose their own priority to handle their primary task and also 'help' without affecting their primary objectives. We will now move to elevate customer experience by personalization of contacts and finding the best possible service for them
+We have organized agents by teams and seen different ways to prioritize callers to some agents and how teams can choose their own priority to handle their primary task and also 'help' without affecting their primary objectives. We will now move to elevate customer experience by personalization of contacts and finding the best possible service for them. 
+
+1.	Teams Aligned with Tasks: Agents are grouped into teams based on the tasks they specialize in, like technical support or order status. 
+2.	Flexible Backup with Queue Ranking: Teams can act as backups for other teams, ensuring calls are handled efficiently when primary teams are busy.
+3.	Simplified Management with Call Distribution Group: Multiple teams can be added to a single queue, making call distribution smooth and flexible. 
+
