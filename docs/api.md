@@ -73,3 +73,13 @@ document.forms["attendee-form"][1].value = localStorage.getItem("attendeeID") ||
 
 
 ## Learning Objectives
+
+Callers can be identified based on their relationships with the business they are calling. We've seen examples of identifying the caller by their calling number. What if they've been identified but due to other reasons we are unable to provide them with the default handling? Webex CC now offers the ability to invoke Analyzer APIs from inside the Flow Designer to make routing decisions based on CC metrics.
+
+#### Flow Designer
+
+Navigate to **CUSTOMER EXPERIENCE** and **Flows** and open the MainFlow_<w class = "attendee_out">attendeeID</w>
+
+We will use option 3 under skill based routing 
+
+Review the flow 
