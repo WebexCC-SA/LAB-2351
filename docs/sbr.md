@@ -169,3 +169,36 @@ Similarly, assign <w class = "attendee_out">attendeeID</w>_AdvancedSupportL2Prof
 #### Configuring the Voice flow
 
 Under **CUSTOMER EXPERIENCE** - **Flows** Look for MainFlow_<w class = "attendee_out">attendeeID</w>
+
+Login Agent 1 and Agent 2 into the agent desktop. The example below is for attendee ID 069 (Agent 3 is optional)
+
+![sbr](../assets/sbr/sbr_11.png)
+
+**Let's make some test calls**
+
+Make a call to the EP DN for your lab and pick **option 2** for Skills based routing.
+
+![sbr](../assets/sbr/sbr_12.png)
+
+Option 2 will take you to another menu option to choose if you would like support for Mobile or Broadband.
+
+The **Condition** node that follows will check your ANI and if matched will provide a premium routing  to the caller. For the sake of this exercise, you can edit the Flow and replace the number in the two **Condition** nodes with the number you are calling from
+
+![sbr](../assets/sbr/sbr_13.png)
+
+If a match is found, then you, the caller will be sent to Agent 1, who takes care of premium customers. If you were to change the number in the condition node and repeat the test, you will notice that the caller is redirected to Agent 2 who has a L2 profile.
+
+!!! Note 
+    We were able to offer differentiated service even though the contacts were all placed in **the same queue**. This is because the categorization is done at a call level by identifying the service it needs through the attributes that are associated with the call. There is no need to create multiple queues for every combination of caller requirement like we did with the Teams based routing example (TechSupport East and TechSupport West queues)
+
+This simple scenario illustrates some key concepts
+
+1.	**Right Agent for every Call:** Skills-Based Routing (SBR) ensures every caller is connected to an agent who knows exactly how to help. 
+2.	**No More Complex Queues:** SBR eliminates the need for creating multiple queues for different customer and product combinations. 
+3.	**Faster Resolution, Happier Customers:** By matching calls based on expertise, SBR boosts customer satisfaction and improves agent efficiency. 
+
+What other strategies can we use when using skills based routing? Onward to **Skill Relaxation**
+
+
+
+

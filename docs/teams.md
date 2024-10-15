@@ -289,6 +289,9 @@ Verify that your agents are still logged in
 
 Open the Flow MainFlow_<w class = "attendee_out">attendeeID</w> from **CUSTOMER EXPERIENCE** - **Flows**
 
+!!! Note
+    This lab uses only one flow and has multiple menu options to try the scenarios. There may be aspects of this flow that you don't yet understand. They will become clear as you go through the rest of this lab
+
 In order to invoke this flow one needs to assign this flow to an entry point. Navigate to **CUSTOMER EXPERIENCE** - **Channels** and  click **Create Channel**
 
 ![channels](../assets/teams/channels_1.png)
@@ -303,7 +306,13 @@ Click **Create**
 
 **Time to make some phone calls**
 
-From any number at your disposal, call the EP DN to invoke the Flow. Choose the option 1 for Teams based routing. Irrespective of which queue you are park the caller into the caller will be answered by an agent in the East or West team. You can test this by placing one of the agents into the "meeting" state from "available" and try calling.
+From any device at your disposal to make calls, call the EP DN to invoke the Flow. Choose the option 1 for Teams based routing. 
+
+!!! Note
+    For the sake of simplicity the choice of the queue is left to you as an input. This is usually done by identifying the caller through an ANI check against a CRM or through other means.
+
+
+Irrespective of which queue you are park the caller into the caller will be answered by an agent in the East or West team. You can test this by placing one of the agents into the "meeting" state from "available" and try calling.
 
 Then try again by placing the other one in "meeting"
 
