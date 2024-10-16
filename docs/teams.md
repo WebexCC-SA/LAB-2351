@@ -83,7 +83,7 @@ Imagine you are calling your telecom provider about a technical issue. You hope 
 
 In this setup, specific teams are aligned to handle certain types of calls – like a technical team for troubleshooting or an order status team for inquiries about shipments. Teams-Based Routing allows us to organize agents into these groups called Teams and ensure the caller receives the right expertise. 
 
-#### Multimedia profile
+### Multimedia profile
 
 **What is it?**
 
@@ -118,7 +118,7 @@ Click **Create**
 
 You have now configured a multimedia profile for the agent to handle 1 voice and 3 each of other digital channels simultaneously.
 
-#### Site
+### Site
 
 **What is it?**
 
@@ -138,7 +138,7 @@ Repeat the above steps to create a West_<w class = "attendee_out">attendeeID</w>
 
 ![Site](../assets/teams/site_2.png)
 
-#### Teams and agents
+### Teams and agents
 
 **What is a team?**
 
@@ -159,7 +159,7 @@ Now create another TechnicalSupport_<w class = "attendee_out">attendeeID</w> tea
 
 ![Team](../assets/teams/team_3.png)
 
-#### Setup Auxiliary codes
+### Setup Auxiliary codes
 
 Idle or wrap up codes are two types of Auxiliary codes. 
 - **Idle codes** typically indicate why an agent is not available to handle customer contacts such as during a lunch break or meeting. 
@@ -171,7 +171,7 @@ Create one or **TechncialSupport**
 
 ![Idle code](../assets/teams/19.png)
 
-Click `Create`
+Click **Create**
 
 Once these wrap-up codes are created we need to make them available to agents. This is done through `Desktop Profiles` that the agents get assigned
 
@@ -183,7 +183,7 @@ Ensure that the **Wrap-up Codes** is selected as **Specific** and select the new
 
 The system will also choose **All** Idle codes available for the agent to indicate their unavailability for handling customer contacts
 
-#### Setup Agents
+### Setup Agents
 
 Under **USER MANAGEMENT** in the left pane navigate to **Contact Center Users**.
 Search for attendeeID in the search box of the Contact Center Users page. attendeeID is your pod ID.
@@ -201,7 +201,7 @@ Configure the same for the second Agent:
 ![Agent](../assets/teams/agent_3.png)
 ![Agent](../assets/teams/agent_4.png)
 
-#### Verify access to the agent desktop
+### Verify access to the agent desktop
 
 > Please use Google Chrome as the web browser when using webRTC as the voice endpoint
 
@@ -227,9 +227,9 @@ Once logged in click on the Agent initials on the top right to verify your succe
 
 Test the login for the other agents using their respective web browser profiles of Google Chrome
 
-In this section you have understood how to access the Control Hub, configure the agents needed for the rest of this lab exercise and log them in with some help from the Chrome browser profiles.
+In this section you have accessed the Control Hub, configured agents needed for the rest of this lab exercise and logged them in with some help from the Chrome browser profiles.
 
-#### Queues
+### Queues
 
 A Queue is like a virtual ordered line that callers are placed in while waiting for an agent to become available. Think of it like standing in line to enter a movie hall. The system organizes all incoming calls into different queues based on the type of request. For example, callers from east coast requiring technical support go into the TechnicalSupport_East, while those from West Coast are placed in the TechnicalSupport_West Queue. 
 
@@ -287,10 +287,24 @@ Verify that your agents are still logged in
 
 **Flow Designer**
 
+For this lab we have created a flow that you will all import and use for the rest of the lab. 
+
+![team](../assets/teams/flow_2.png) the flow and 
+
+[Download](../assets/MainFlow_template.json){download=""} the flow to your computer and import the flow
+
+![team](../assets/teams/flow_3.png)
+
+
 Open the Flow MainFlow_<w class = "attendee_out">attendeeID</w> from **CUSTOMER EXPERIENCE** - **Flows**
 
 !!! Note
     This lab uses only one flow and has multiple menu options to try the scenarios. There may be aspects of this flow that you don't yet understand. They will become clear as you go through the rest of this lab
+
+Remember this Flow is only a template, you need to replace some aspects of the flow with the configuration objects you created. See the image below for what needs to be changed
+
+![team](../assets/teams/flow_4.png)
+
 
 In order to invoke this flow one needs to assign this flow to an entry point. Navigate to **CUSTOMER EXPERIENCE** - **Channels** and  click **Create Channel**
 
@@ -306,7 +320,7 @@ Click **Create**
 
 **Time to make some phone calls**
 
-From any device at your disposal to make calls, call the EP DN to invoke the Flow. Choose the option 1 for Teams based routing. 
+From any device at your disposal to make calls, call the EP DN to invoke the Flow. Choose the **option 1** for Teams based routing. 
 
 !!! Note
     For the sake of simplicity the choice of the queue is left to you as an input. This is usually done by identifying the caller through an ANI check against a CRM or through other means.
@@ -316,7 +330,7 @@ Irrespective of which queue you are park the caller into the caller will be answ
 
 Then try again by placing the other one in "meeting"
 
-#### Summary
+### Summary
 
 Both teams are made available for the callers simultaneously. We did not prioritize one team over the other. For that let's try the Call Distribution Group
 
