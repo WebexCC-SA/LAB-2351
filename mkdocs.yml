@@ -87,7 +87,6 @@ nav:
       - Lab 4 - Attributes and Skills based routing: sbr.md
       - Lab 5 - Skills relaxation: relax.md
       - Lab 6 - Routing based on CC metrics - APIs from flow: api.md
-      - Lab 7 - Routing based on past experience - Auto CSAT routing: autocsat.md
       - Conclusion: conclusion.md
   - Topology: topologies.md  
 

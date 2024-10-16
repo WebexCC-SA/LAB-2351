@@ -174,13 +174,18 @@ Login Agent 1 and Agent 2 into the agent desktop. The example below is for atten
 
 ![sbr](../assets/sbr/sbr_11.png)
 
+Like we did in the teams-based routing lab we need to update the flow to queue to the configuration you have built. See the nodes to update in the image below
+
+![sbr](../assets/sbr/flow_1.png)
+![sbr](../assets/sbr/flow_2.png)
+
 **Let's make some test calls**
 
 Make a call to the EP DN for your lab and pick **option 2** for Skills based routing.
 
 ![sbr](../assets/sbr/sbr_12.png)
 
-Option 2 will take you to another menu option to choose if you would like support for Mobile or Broadband.
+Option 2 will take you to another menu option to choose if you would like support for Mobile Service or Broadband.
 
 The **Condition** node that follows will check your ANI and if matched will provide a premium routing  to the caller. For the sake of this exercise, you can edit the Flow and replace the number in the two **Condition** nodes with the number you are calling from
 

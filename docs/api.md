@@ -82,4 +82,51 @@ Navigate to **CUSTOMER EXPERIENCE** and **Flows** and open the MainFlow_<w class
 
 We will use option 3 under skill based routing 
 
-Review the flow 
+Review the flow MainFlow_<w class = "attendee_out">attendeeID</w>
+
+![api](../assets/api/1.png)
+
+Feel free to review each node to understand what is being done. This option will calculate the duration of the last 7 days and use the search API to check if any call from this same ANI was handled outside of the set service level. If yes, then a variable ```priorityBasedonAPIlookup``` is set to 1. 
+
+When setting the caller into a queue (QueueContact node), the same ```priorityBasedonAPIlookup``` variable will be set for the priority of the call. If set to 1, the call will be treated as highest priority and will jump over others waiting in queue ahead of it.
+
+Let's dive in!
+
+#### What is the SLA for these queues?
+
+The queue we use is SBR_TechnicalSupport_<w class = "attendee_out">attendeeID</w>
+
+Navigate to **CUSTOMER EXPERIENCE** - **Queues** and look up this queue. Scroll down to **Advanced Settings**
+
+![api](../assets/api/2.png) 
+
+We have defined any call going through this queue needs to be answered under 30 seconds to remain inside service level. 
+
+**First call**
+
+Make a phone call to the EP DN and choose option 2 (yes, **option 2**) but place both Agent and Agent 2 are unavailable to take calls. 
+
+Allow the call to wait for longer than 30 seconds. Now make the agents available and depending on the ANI being recognized or not, one of the agents will receieve the call.
+
+
+**Second call**
+
+Make another phone call and choose **option 3**. The API call will be triggered from the ```HTTPRequest``` node and set the ```priorityBasedonAPILookup``` variable to 1 since the previous call we made did not get answered inside the service level threshold of 30s.
+
+When the agent is available based on your choice of Mobile Service or Broadband, they will see the call delivered over any other call that was in queue. The agent desktop will show the value of ```priorityBasedonAPILookup``` amongst other fields
+
+**How does this work?**
+
+Under **TENANT SETTINGS** - **Integrations** look at the possible connectors. The **WxCC_API** connector is what is used for this exercise. You do not have to add anything for this lab but if you did the process is now as simple as
+
+![api](../assets/api/3.png)
+
+The webex CC connector offers access to all possible use cases to invoke from inside the Flow designer. The list of APIs can be found in the [https://developer.webex-cx.com/](https://developer.webex-cx.com/) page. 
+
+#### Summary
+
+You have unlocked yet another source of decision making data points using the APIs from the Flow Designer. The possibilities are endless as more APIs are made available. They will all be accessible through the webex CC connector through the Flows that you build
+
+
+
+
