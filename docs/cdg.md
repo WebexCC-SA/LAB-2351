@@ -122,6 +122,6 @@ But, isn't that what we did in the previous lab? We had both teams offered the c
 
 While we do that we also want to **prioritize** the West team to answer calls from the west queue **first** before we answer calls in the east queue. Remember, both teams are servicing both queues. So far, it has not been possible to do this without introducing a wait time between the groups. And even if we do, the west team could receive a call from the east queue that was waiting for longer even though a call is waiting in the west queue.
 
-### Summary
+## Summary
 
 We see that the expansion of call distribution groups is an elegant way to offer more agents to handle the caller, call-by-call. This eliminates the need to re-skill agents reactively. But, the administrator would like to let each team handle callers from their region **first** before they handle calls for others

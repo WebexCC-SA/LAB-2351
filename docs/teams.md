@@ -96,7 +96,7 @@ A Multimedia Profile defines the various channels through which an agent can com
 
 **Configuration**
 
-Login into Control Hub [https://admin.webex.com](https://admin.webex.com)
+Using the **Admin** profile of your Chrome browser, login into Control Hub [https://admin.webex.com](https://admin.webex.com)
 
 ![login into control hub](../assets/teams/mmp_1.png)
 
@@ -209,7 +209,7 @@ Configure the same for the second Agent:
     Since we will be using the same Chrome browser for different roles we will use the **Chrome Browser user profiles** to allow multiple logins into the different components of the Webex contact center. For the control hub, use the Administrator profile created for you in the Chrome browser. Always offer Chrome to **remember your credentials and password** for this lab
 
 
-Use a different Chrome browser profile for each agent
+Use the different Chrome browser profiles on your desktop for each agent
 
 ![Chrome Profiles](../assets/voice_configuration/16.png)
 
@@ -291,7 +291,7 @@ For this lab we have created a flow that you will all import and use for the res
 
 ![team](../assets/teams/flow_2.png) the flow and 
 
-[Download](../assets/MainFlow_template.json){download=""} the flow to your computer and import the flow
+[Download](../assets/teams/MainFlow_template.json) the flow to your computer and import the flow. Right click and ```Save As```
 
 ![team](../assets/teams/flow_3.png)
 
