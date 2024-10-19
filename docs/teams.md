@@ -318,6 +318,10 @@ setup the EP DN as the **Support Number**
 
 Click **Create**
 
+**Prepare our reports to verify call routing**
+
+Before we make phone calls let's take a detour to prepare our contact center reports. Review the instructions in the [Reporting](../assets/reporting.md) section.
+
 **Time to make some phone calls**
 
 From any device at your disposal to make calls, call the EP DN to invoke the Flow. Choose the **option 1** for Teams based routing. 
