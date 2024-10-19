@@ -181,6 +181,9 @@ Like we did in the teams-based routing lab we need to update the flow to queue t
 
 **Let's make some test calls**
 
+!!! Note
+    You have already created reports in the previous labs. Remember to use them to view your results
+
 Make a call to the EP DN for your lab and pick **option 2** for Skills based routing.
 
 ![sbr](../assets/sbr/sbr_12.png)
