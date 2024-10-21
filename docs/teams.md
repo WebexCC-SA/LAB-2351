@@ -91,16 +91,22 @@ A Multimedia Profile defines the various channels through which an agent can com
 
 **How does it work?**
 
-- Channel Assignment: Each agent can be assigned to specific channels based on their roles and preferences. For instance, one agent might handle phone calls and chats, while another might focus on emails and social media interactions.
-- Team-Based Approach: Teams can have a collective Multimedia Profile, allowing for a broader range of customer interactions. For example, a technical support team might manage both chat and phone calls, ensuring coverage across all channels.
+- **Channel Assignment:** Each agent can be assigned to specific channels based on their roles and preferences. For instance, one agent might handle phone calls and chats, while another might focus on emails and social media interactions.
+- **Team-Based Approach:** Teams can have a collective Multimedia Profile, allowing for a broader range of customer interactions. For example, a technical support team might manage both chat and phone calls, ensuring coverage across all channels.
 
 **Configuration**
 
-Using the **Admin** profile of your Chrome browser, login into Control Hub [https://admin.webex.com](https://admin.webex.com)
+Using the **Admin** profile of your Chrome browser, login into Control Hub [https://admin.webex.com](https://admin.webex.com). 
+
+Your login will be the **Admin Name** in the email you received. It will be of the format **wxcclabs+admin_ID<w class = "attendee_out">attendeeID</w>@gmail.com**. You will see another login screen with **OKTA** on it where you may need to enter the email address again and the password provided to you.
+
+**Remember to take up the offer from Chrome to save your password**
+
+This is the **Administration interface** for webex contact center and is also known as the **Control Hub**
 
 ![login into control hub](../assets/teams/mmp_1.png)
 
-Look for the contact center option in the left pane under **SERVICES – Contact Center**
+Look for the contact center option in the left pane under **SERVICES – Contact Center** and Click it
 
 ![contact center left pane](../assets/teams/mmp_2.png)
 
@@ -128,13 +134,16 @@ Consider a company operating in various regions, each with a unique geographical
 
 Under **USER MANAGEMENT** on the left pane navigate to **Sites**
 
-Click **Create Site** on the top right corner to create a new site East_<w class = "attendee_out">attendeeID</w> and choose the **Multimedia Profile** you created in the previous step MMP_<w class = "attendee_out">attendeeID</w>
+Click **Create Site** on the top right corner to create a new site EastCoast_<w class = "attendee_out">attendeeID</w> and choose the **Multimedia Profile** you created in the previous step MMP_<w class = "attendee_out">attendeeID</w>
 
 Click **Create**
 
+!!! Tip
+    When there is a search window or drop down list in the Control Hub interface, start typing the string you want to search to find it quickly
+
 ![Site](../assets/teams/site_1.png)
 
-Repeat the above steps to create a West_<w class = "attendee_out">attendeeID</w>
+Repeat the above steps to create a WestCoast_<w class = "attendee_out">attendeeID</w>
 
 ![Site](../assets/teams/site_2.png)
 
@@ -151,55 +160,40 @@ As part of this setup, when agents log in to the system, they choose the team to
 **Configuration**
 
 Under **USER MANAGEMENT** in the left pane navigate to **Teams** and click **Create Team.**
-Create the TechnicalSupport_<w class = "attendee_out">attendeeID</w> team where <w class = "attendee_out">attendeeID</w> is your pod ID. Choose the EastCoast_<w class = "attendee_out">attendeeID</w> site and ![Team](../assets/teams/team_1.png) and **Create** the team.
+Create the TechnicalSupport_<w class = "attendee_out">attendeeID</w>_East team where <w class = "attendee_out">attendeeID</w> is your pod ID. Choose the EastCoast_<w class = "attendee_out">attendeeID</w> site and ![Team](../assets/teams/team_6.png) and **Create** the team.
 
-On the next screen, click **Done**
+On the next screen
 
-Now create another TechnicalSupport_<w class = "attendee_out">attendeeID</w> team and assign it to the WestCoast site
+![Team](../assets/teams/workflow_1.png)
 
-![Team](../assets/teams/team_3.png)
+ click **Done**. We will be using a slightly different order of configuration than what is suggested in that screen
 
-### Setup Auxiliary codes
+Now create another TechnicalSupport_<w class = "attendee_out">attendeeID</w>_West team and assign it to the WestCoast site
 
-Idle or wrap up codes are two types of Auxiliary codes. 
-- **Idle codes** typically indicate why an agent is not available to handle customer contacts such as during a lunch break or meeting. 
-- **Wrap-up codes** indicate the result of the customer interaction, for example, the agent escalated the contact, or sold a service.
+![Team](../assets/teams/team_7.png)
 
-Navingate to **DESKTOP EXPERIENCE - Idle/Wrap-up Codes** and click on **Create Idle/Wrap-up Code**
-
-Create one or **TechncialSupport**
-
-![Idle code](../assets/teams/19.png)
-
-Click **Create**
-
-Once these wrap-up codes are created we need to make them available to agents. This is done through `Desktop Profiles` that the agents get assigned
-
-Under **DESKTOP EXPERIENCE - Desktop Profiles** select the **Agent-Profile (Auto WrapUp)** and click on the **Idle/Wrap-up Codes**
-
-![Wrap-up codes](../assets/teams/21.png)
-
-Ensure that the **Wrap-up Codes** is selected as **Specific** and select the new wrap-up codes that we created in the previous step. You may need to make one of the wrap-up codes as default
-
-The system will also choose **All** Idle codes available for the agent to indicate their unavailability for handling customer contacts
 
 ### Setup Agents
 
 Under **USER MANAGEMENT** in the left pane navigate to **Contact Center Users**.
 Search for attendeeID in the search box of the Contact Center Users page. attendeeID is your pod ID.
+
 Click on the agent created for your pod and configure them for Contact Center.
 
 Search for <w class = "attendee_out">attendeeID</w> in the search box of the Contact Center Users page. <w class = "attendee_out">attendeeID</w> is your pod ID.
 
-![Agent](../assets/teams/agent_1.png)
-![Agent](../assets/teams/agent_2.png)
+Enable the **Contact Center** toggle to reveal more fields. We have now enabled this agent with a Contact center license. Fill out the rest of the fields based on what was configured for your attendee ID.
+
+The first agent will be in the **East coast** site and team
+
+![Agent](../assets/teams/agent_5.png)
 
 Now click **Save**
 
-Configure the same for the second Agent:
+Configure the same for the second Agent in the **West coast** site and team
 
-![Agent](../assets/teams/agent_3.png)
-![Agent](../assets/teams/agent_4.png)
+![Agent](../assets/teams/agent_6.png)
+
 
 ### Verify access to the agent desktop
 
@@ -209,7 +203,9 @@ Configure the same for the second Agent:
     Since we will be using the same Chrome browser for different roles we will use the **Chrome Browser user profiles** to allow multiple logins into the different components of the Webex contact center. For the control hub, use the Administrator profile created for you in the Chrome browser. Always offer Chrome to **remember your credentials and password** for this lab
 
 
-Use the different Chrome browser profiles on your desktop for each agent
+Use the different Chrome browser profiles on your desktop for each agent. 
+
+**The agent logins are in the email with the rest of the configurations. The password is also in the same email**
 
 ![Chrome Profiles](../assets/voice_configuration/16.png)
 
@@ -225,9 +221,11 @@ Once logged in click on the Agent initials on the top right to verify your succe
 
 ![Post agent login](../assets/teams/13.png)
 
-Test the login for the other agents using their respective web browser profiles of Google Chrome
+Test the login for the other agent using their respective web browser profiles of Google Chrome. 
 
-In this section you have accessed the Control Hub, configured agents needed for the rest of this lab exercise and logged them in with some help from the Chrome browser profiles.
+You should now have logged in two agents
+
+So far, you have accessed the Control Hub, configured agents needed for the rest of this lab exercise and logged them in with some help from the Chrome browser profiles.
 
 ### Queues
 
@@ -253,9 +251,13 @@ Since our queue is for TechnicalSupport_East, we would like our team from the Ea
 
 Configure the **Group** like below
 
+![cdg](../assets/teams/q_7.png)
+
 ![cdg](../assets/teams/cdg_1.png)
 
-Click **Save**
+
+!!! Note
+    It doesn't matter that West is shown above East when we expand the Call Distribution Group. They are both added to **Group 1** and are both **Priority 1**
 
 Under **Advanced Settings**, configure the parameters as below and click **Create**
 
@@ -270,9 +272,7 @@ We now have two queues - TechSupport_East and TechSupport_West. Both have the ea
 
 ![cdg](../assets/teams/cdg_3.png)
 
-**Login agents**
-
-Before we login agents we will make the right agents are members of the required teams
+We will now make sure the right agents are members of the required teams
 
 Navigate to **USER MANAGEMENT** - **Contact Center Users**
 
@@ -282,28 +282,58 @@ Search for Agent<w class = "attendee_out">attendeeID</w>
 
 This shows the agents and the teams they belong in. 
 
-
 Verify that your agents are still logged in
 
-**Flow Designer**
+### Flow Designer
 
-For this lab we have created a flow that you will all import and use for the rest of the lab. 
+A "flow" defines the way the caller experiences the contact center before talking to an agent. The flow for voice calls is built in an interface called the **Flow Designer**. For this lab we have created a flow that you will all import and use for the rest of the lab. 
 
 ![team](../assets/teams/flow_2.png) the flow and 
 
-[Download](../assets/teams/MainFlow_template.json) the flow to your computer and import the flow. Right click and ```Save As```
+[Download](../assets/teams/MainFlow_template.json) the flow to your computer and import the flow. Right click and ```Save As``` **MainFlow_<w class = "attendee_out">attendeeID</w>** to your downloads folder
 
 ![team](../assets/teams/flow_3.png)
 
+The name of the flow **MainFlow_template** is also embedded in the JSON file we just downloaded. If we were to import it as-is, the flow will get imported with the same name. We will need to edit the JSON file just downloaded to give it a name that is associated with your attendee ID. This is only necessary here since all lab participants are importing the same flow template and we don't want to save the same flow over others.
 
-Open the Flow MainFlow_<w class = "attendee_out">attendeeID</w> from **CUSTOMER EXPERIENCE** - **Flows**
+1. Open the downloaded file in nodepad++ 
+
+![team](../assets/teams/flow_5.png)
+
+2. Replace **MainFlow_template** with **MainFlow_<w class = "attendee_out">attendeeID</w>**
+3. Save and close the file
+
+Now the file name of the flow also matches the internal identifier when it is imported into the system
+
+In **CUSTOMER EXPERIENCE** - **Flows** ensure that there is no flow for your <w class = "attendee_out">attendeeID</w>. Import the saved Flow MainFlow_<w class = "attendee_out">attendeeID</w> 
 
 !!! Note
     This lab uses only one flow and has multiple menu options to try the scenarios. There may be aspects of this flow that you don't yet understand. They will become clear as you go through the rest of this lab
 
+From the **CUSTOMER EXPERIENCE** - **Flows** you will now be able to find the flow you just imported
+
+
 Remember this Flow is only a template, you need to replace some aspects of the flow with the configuration objects you created. See the image below for what needs to be changed
 
+Open the flow you just imported
+
+![team](../assets/teams/flow_6.png)
+
+You will be editing this portion of the flow. 
+
 ![team](../assets/teams/flow_4.png)
+
+Enable the **Edit** toggle on the top of the page. The toggle next to the search bar will open the parameters to edit for each node
+
+![team](../assets/teams/flow_8.png)
+
+!!! Note
+    Use the magnifying glass at the bottom left corner of the page to expand and shrink the flow designer canvas
+
+
+Once the flow is updated, toggle the **validation** button on the bottom right of the flow canvas. If there are no errors, proceed to **Publish Flow**
+
+![team](../assets/teams/flow_7.png)
 
 
 In order to invoke this flow one needs to assign this flow to an entry point. Navigate to **CUSTOMER EXPERIENCE** - **Channels** and  click **Create Channel**
@@ -318,10 +348,6 @@ setup the EP DN as the **Support Number**
 
 Click **Create**
 
-**Prepare our reports to verify call routing**
-
-Before we make phone calls let's take a detour to prepare our contact center reports. Review the instructions in the [Reporting](../assets/reporting.md) section.
-
 **Time to make some phone calls**
 
 From any device at your disposal to make calls, call the EP DN to invoke the Flow. Choose the **option 1** for Teams based routing. 
@@ -333,6 +359,10 @@ From any device at your disposal to make calls, call the EP DN to invoke the Flo
 Irrespective of which queue you are park the caller into the caller will be answered by an agent in the East or West team. You can test this by placing one of the agents into the "meeting" state from "available" and try calling.
 
 Then try again by placing the other one in "meeting"
+
+**Prepare our reports to verify call routing**
+
+Before we finish this section let's take a detour to prepare our contact center reports. Review the instructions in the [Reporting](../assets/reporting.md) section.
 
 ### Summary
 

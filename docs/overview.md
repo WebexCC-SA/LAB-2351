@@ -12,5 +12,9 @@ Join us as we dive into the world of advanced routing techniques in a dynamic, f
 
 **Skill-Based Routing:** Unlock the power of personalized service by *assigning specific skill requirements* **to contacts** based on customer attributes. Fine-tune the routing process to maximize efficiency and enhance satisfaction at every customer interaction touchpoint! 
 
+**In each of the following exercises, you will be asked to enter your lab attendee ID. Please enter the 3 digit attendee ID provided in your email**
+
+Let's now review our lab guide and instructions.
+
 
 
