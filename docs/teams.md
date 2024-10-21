@@ -292,9 +292,9 @@ A "flow" defines the way the caller experiences the contact center before talkin
 
 [Download](../assets/teams/MainFlow_template.json) the flow to your computer and import the flow. Right click and ```Save As``` **MainFlow_<w class = "attendee_out">attendeeID</w>** to your downloads folder
 
-![team](../assets/teams/flow_3.png)
-
 The name of the flow **MainFlow_template** is also embedded in the JSON file we just downloaded. If we were to import it as-is, the flow will get imported with the same name. We will need to edit the JSON file just downloaded to give it a name that is associated with your attendee ID. This is only necessary here since all lab participants are importing the same flow template and we don't want to save the same flow over others.
+
+![team](../assets/teams/flow_3.png)
 
 1. Open the downloaded file in nodepad++ 
 
