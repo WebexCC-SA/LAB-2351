@@ -14,11 +14,12 @@ Click on **Visualization**
 
 ![reporting](../assets/reporting/2.png)
 
-and now **Import**
-
 ![reporting](../assets/reporting/3.png)
 
 [Save as](../assets/reporting/Call_Details_Report.json) the report template to your computer and **Import** 
+
+!!! Note
+    The name of the report is contained inside the JSON file. If you wish, you can edit and save the file in notepad++ and change the name to reflect your attendee ID
 
 ![reporting](../assets/reporting/4.png)
 

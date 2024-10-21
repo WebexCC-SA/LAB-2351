@@ -75,15 +75,16 @@ document.forms["attendee-form"][1].value = localStorage.getItem("attendeeID") ||
 
 
 ## Learning Objectives
-1. Understand your configuration instructions
-2. Familiarize yourself how we will use Google Chrome profiles to simulate the situations for this lab
+1. Ensure that you have access to the email with instructions and credentials to access your lab. It is an email with the subject line - ```WebexCC: Lab Access```. If you do not, please ask your lab proctor now
+2. Understand your configuration instructions
+3. Familiarize yourself how we will use Google Chrome profiles to simulate the situations for this lab
 
 ### Know before you start
 
 1. We will be simulating situations in a **shared lab tenant**
 2. The Agents have been configured for you. You will be performing the rest of the configurations to route voice calls
-3. All your configurations **should contain your attendee ID** so the lab users don't step over each other
-4. Each of you has been provided with the phone number to dial and three agents (we will use only two in the exercises)
+3. All your configurations **should contain your attendee ID** so the lab users don't step over each other's configurations
+4. Each of you has been provided with the phone number to dial (Entry point DN) and three agents (we will use only two in the exercises)
 5. Please ask for help when you need it
 
 !!! Note
@@ -120,12 +121,14 @@ $Shortcut.Save()
 
 ![profiles](../assets/voice_configuration/term_1.png)
 
+Check the desktop of your lab PC. You should find 4 Chrome shortcuts created - WxCC Admin, **WxCC Agent1, WxCC Agent2 and WxCC Supervisor**
+
 When you click on the links 
 
 ![profiles](../assets/voice_configuration/term_2.png)
 
-You can customize each profile to be easily identifiable with a name or icon of your choice
+You can customize each profile to be easily identifiable with a name and/or icon of your choice
 
 ![profiles](../assets/voice_configuration/term_3.png)
 
-We will use the **Admin** profile in the next section
+We will use the **Admin** profile first in the next section.
