@@ -85,8 +85,8 @@ nav:
       - Lab 2 - Call distribution groups: cdg.md
       - Lab 3 - Rank queues: rank.md
       - Lab 4 - Attributes and Skills based routing: sbr.md
-      - Lab 5 - Skills relaxation: relax.md
-      - Lab 6 - Routing based on CC metrics - APIs from flow: api.md
+      - Lab 5 - Routing based on CC metrics - APIs from flow: api.md
+      - Lab 6 - Skills relaxation (optional): relax.md
       - Conclusion: conclusion.md
   - Reporting: reporting.md  
 
