@@ -74,7 +74,7 @@ document.forms["attendee-form"][1].value = localStorage.getItem("attendeeID") ||
 
 ## Learning Objectives
 
-We've seen that groups of agents in teams can be associated with queues to help service callers. In this exercise we will adjust how the teams are organized to improve the chances that the caller will speak to an agent **in a team** that we desire. 
+We've seen that groups of agents in teams can be associated with queues to help service callers. In this exercise we will adjust how the teams are organized to improve the chances that the caller will speak to an agent **in a team that we desire.**
 
 **Why CDGs matter**
 
@@ -122,8 +122,8 @@ But, isn't that what we did in the previous lab? We had both teams offered the c
 
 ![cdg](../assets/teams/cdg_3.png)
 
-How can we **prioritize** the East team to answer calls from the east queue **first** before we answer calls in the east queue? This is the function of queue rank which we will explore in the next section
+How can we **prioritize** the East team to answer calls from the east queue **first** before we answer calls in the east queue? 
 
 ## Summary
 
-We see that the expansion of call distribution groups is an elegant way to offer more agents to handle the caller, call-by-call. This eliminates the need to re-skill agents reactively. But, the administrator would like to let each team handle callers from their region **first** before they handle calls for others. Onward to queue ranking.
+We see that the expansion of call distribution groups is an elegant way to offer more agents to handle the caller, call-by-call. This eliminates the need to re-skill agents reactively. But, the business would like to let each team handle callers from their region **first** before they handle calls for others. Onward to queue ranking.
