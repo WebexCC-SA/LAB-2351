@@ -74,7 +74,12 @@ document.forms["attendee-form"][1].value = localStorage.getItem("attendeeID") ||
 
 ## Learning Objectives
 
-But what if the East Coast queue is free, whereas West Coast Queue is filling up. This is where **Rank Queues** comes into play. We can assign a priority to the queues from the perspective of the team. We can let teams choose the order in which they will service the queues they are responsible for. For example, the East Coast Technical Team will always prioritize their own queue first, but if they have no calls waiting, they can assist with the West Coast Queue. 
+ In the previous section you saw that it was possible for one team to help another but we either needed to make them available simultaneously or introduce a gap of a few seconds before the second team offers to help. This means
+ 
+ 1. Some teams may be answering calls from other queues at the expense of their own queue 
+ 2. Agents may be free in another team but won't be matched with the caller until the time interval between groups expires
+ 
+ With rank queues, we can assign a priority to the queues from the perspective of the team that answers calls from them. We can let teams choose the order in which they will service the queues they are responsible for. For example, the East Coast Technical Team will always prioritize their own queue first, but if they have no calls waiting, they can assist with the West Coast Queue. 
 
 **Why Rank Queues Matter**
 

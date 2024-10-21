@@ -74,23 +74,23 @@ document.forms["attendee-form"][1].value = localStorage.getItem("attendeeID") ||
 
 ## Learning Objectives
 
-Learn about attribute based routing (sometimes referred to as skills-based routing) and how it helps match the caller and the agent
+Learn about skills based routing (sometimes referred to as attribute based routing) and how it helps match the caller and the agent
 
 **The common caller experience**
 
-Imagine that you are a above average spending customer with a business. You've used their products and services for a number of years, but now need some assistance. It is Natural to think *"With the relationship I have with the business, I deserve nothing but the best. I want someone that can understand what I need and resolve any problem I have"*
+Imagine that you are an above average spending customer with a business. You've used their products and services for a number of years, but now need some assistance. It is natural to think *"With the relationship I have with the business, I deserve nothing but the best. I want someone that can understand what I need and resolve any problem I have"*
 
-You call the contact center hoping to be prioritized and provided special treatment but think *"I hope I get to speak to someone that doesn't keep me on the phone for too long trying to understand what they can do to help me".
+You call the contact center hoping to be prioritized and provided special treatment but think *"I hope I get to speak to someone that doesn't keep me on the phone for too long trying to understand what they can do to help me".*
 
 **The experience of the customer service representative (agent)**
 
-The agent receives your call and quickly realize that your question is beyond the area of their expertise. They think "Uh oh, I've asked many clarifying questions already and I am not the best fit for this issue. I may have to ask them more questions or send this call to someone else."
+The agent receives your call and quickly realize that your question is beyond the area of their expertise. They fear *"Uh oh, I've asked many clarifying questions already and I am not the best fit for this issue. I may have to ask them more questions or send this call to someone else."*
 
-Both the customer and the agent are left wanting a better experience. They both feel like they both deserve better.
+Both the customer and the agent are left wanting a better experience. They *both* feel like they deserve better.
 
 **Skills-based routing**
 
-With SBR, the solution can be configured to know who the caller is, what their relationship is worth and match them with the agent that has the right expertise (skills) to handle them. For the customer this is a very pleasant situation that started off by needing to call in, no one likes that. For the agent, the ability to solve a problem feels empowering.
+With SBR, the solution can be configured to "know" who the caller is, what their relationship is worth and match them with the agent that has the right expertise (skills) to handle them. For the customer this is a very pleasant situation that started off by needing to call in, no one likes that. For the agent, the ability to solve a problem feels empowering.
 
 **Some immediate benefits of SBR**
 
@@ -131,7 +131,7 @@ For this exercise, we will create 3 skill definitions:
 2.	**Mobile:** This will indicate the product proficiency.
 3.	**Broadband:** This will indicate the product proficiency. 
 
-Create athe skill definitions under the **USER MANAGEMENT** - **Skill Definitions**
+Create the skill definitions under the **USER MANAGEMENT** - **Skill Definitions**
 
 ![sbr](../assets/sbr/sbr_4.png)
 ![sbr](../assets/sbr/sbr_5.png)
@@ -143,9 +143,13 @@ A skill profile is like a set of qualifications an agent needs for specific task
 
 For this exercise, we will create three skill profiles:
 
+
 1.	**Premium Care (L3) Profile:** For the most senior agents (L3), who handle premium customers and can handle multiple product lines. [CustService = 10, Mobile =10, Broadband =10]
 2.	**Advanced Support (L2) Profile:** For mid-level agents (L2), who address more advanced but not top-tier queries [CustService = 5, Mobile =5, Broadband =5]
 3.	**Basic Assist (L1) Profile:** Basic Assist (L1) Profile – For entry-level agents (L1), handling routine or simple customer inquiries. [CustService = 1, Mobile =1, Broadband =1]
+
+!!! Tip
+    Use your browser search (Control+F) to search and locate your attendee ID when configuring skill profiles
 
 
 ![sbr](../assets/sbr/sbr_7.png)
@@ -158,13 +162,13 @@ Under **USER MANAGEMENT** - **Contact center Users** locate Agent<w class = "att
 
 ![sbr](../assets/sbr/sbr_10.png)
 
-Similarly, assign <w class = "attendee_out">attendeeID</w>_AdvancedSupportL2Profile to Agent<w class = "attendee_out">attendeeID</w>.2 and <w class = "attendee_out">attendeeID</w>_BasicAssistL1Profile to Agent<w class = "attendee_out">attendeeID</w>.3
+Similarly, assign <w class = "attendee_out">attendeeID</w>_AdvancedSupportL2Profile to Agent<w class = "attendee_out">attendeeID</w>.2 and <w class = "attendee_out">attendeeID</w>_BasicAssistL1Profile to Agent<w class = "attendee_out">attendeeID</w>.3 (Agent 3 is optional)
 
 | Agent | Skill Profile |
 |-------|---------------|
 |Agent<w class = "attendee_out">attendeeID</w>|<w class = "attendee_out">attendeeID</w>_PremiumCareL3Profile|
 |Agent<w class = "attendee_out">attendeeID</w>.2  |<w class = "attendee_out">attendeeID</w>_AdvancedSupportL2Profile|
-|Agent<w class = "attendee_out">attendeeID</w>.3 | <w class = "attendee_out">attendeeID</w>_BasicAssistL1Profile|
+|Agent<w class = "attendee_out">attendeeID</w>.3 (optional) | <w class = "attendee_out">attendeeID</w>_BasicAssistL1Profile|
 
 #### Configuring the Voice flow
 
@@ -179,25 +183,52 @@ Like we did in the teams-based routing lab we need to update the flow to queue t
 ![sbr](../assets/sbr/flow_1.png)
 ![sbr](../assets/sbr/flow_2.png)
 
-**Let's make some test calls**
+When you change the queue in the **QueueContact** node the skill conditions need to be reconfigured. We'll do them for the two nodes shown below. 
 
-!!! Note
-    You have already created reports in the previous labs. Remember to use them to view your results
+![sbr](../assets/sbr/flow_3.png)
+![sbr](../assets/sbr/flow_4.png)
 
-Make a call to the EP DN for your lab and pick **option 2** for Skills based routing.
+
+Optionally, you can edit the other two **QueueContact** nodes to reflect the correct skills for the Broadband skill. We'll skip this in the interest of time.
+
 
 ![sbr](../assets/sbr/sbr_12.png)
 
-Option 2 will take you to another menu option to choose if you would like support for Mobile Service or Broadband.
+**Option 2** (skills based routing) will take you to another menu option to choose if you would like support for Mobile Service or Broadband. For this lab, we will choose **Mobile service** (Option 1)
 
-The **Condition** node that follows will check your ANI and if matched will provide a premium routing  to the caller. For the sake of this exercise, you can edit the Flow and replace the number in the two **Condition** nodes with the number you are calling from
+The **Condition** node that follows will check your ANI and if matched will provide a premium routing  to the caller. For the sake of this exercise, you can edit the Flow and replace the number in the **Condition** node for the Mobile service flow with the number you are calling from
 
 ![sbr](../assets/sbr/sbr_13.png)
 
 If a match is found, then you, the caller will be sent to Agent 1, who takes care of premium customers. If you were to change the number in the condition node and repeat the test, you will notice that the caller is redirected to Agent 2 who has a L2 profile.
 
+
+|Call from   | Service category    |  Menu option chosen | skill assignment   |
+|------------|---------------------|---------------------|--------------------|
+|ANI recognized | Premium          | 1 - Mobile Service  | Customer service >= 10, Mobile >= 10 |
+|ANI NOT recognized | not premium  | 1 - Mobile Service  | Customer service >=5, Mobile >= 5 |
+
+
+**Let's make some test calls**
+
+Login Agent and Agent 2 and set them in "Available" state
+
+Make a call to the EP DN for your lab and pick **option 2** for Skills based routing. Then choose **Option 1** for Mobile.
+
+When the **Condition** node matches the calling ANI it will route the call to the Agent that has skill level of 10. The contact will go to the best available agent. 
+
+!!! Note
+    You have already created reports in the previous labs. **Edit the report and add the SBR queue you created in the queue filter**
+
+![sbr](../assets/sbr/reporting_2.png)
+![sbr](../assets/sbr/reporting_3.png)
+
+Remember to use them to view your results. While the call is waiting in queue, check the report to review the skill requirement of the caller
+
+![sbr](../assets/sbr/reporting_1.png)
+
 !!! Note 
-    We were able to offer differentiated service even though the contacts were all placed in **the same queue**. This is because the categorization is done at a call level by identifying the service it needs through the attributes that are associated with the call. There is no need to create multiple queues for every combination of caller requirement like we did with the Teams based routing example (TechSupport East and TechSupport West queues)
+    We were able to offer differentiated service even though the contacts were all placed in **the same queue**. This is because the categorization is done at a call level by identifying the service it needs through the attributes that are associated **with the call**. There is no need to create multiple queues for every combination of caller requirement like we did with the Teams based routing example (TechSupport East and TechSupport West queues)
 
 This simple scenario illustrates some key concepts
 
@@ -205,7 +236,7 @@ This simple scenario illustrates some key concepts
 2.	**No More Complex Queues:** SBR eliminates the need for creating multiple queues for different customer and product combinations. 
 3.	**Faster Resolution, Happier Customers:** By matching calls based on expertise, SBR boosts customer satisfaction and improves agent efficiency. 
 
-What other strategies can we use when using skills based routing? Onward to **Skill Relaxation**
+Are your premium customers guaranteed the best possible service every single time? What if the queues are long and the desired service level has been missed for that caller? We can use past metrics to provide a differentiated experience when they call the next time. Let's explore how this can be accomplished in the next section
 
 
 
