@@ -93,7 +93,7 @@ Do this by editing the **Group** for both queues - <w class = "attendee_out">att
 
 Now that you have adjusted the teams to both be available to the queue at the same time, we need to provide the order in which the queues will be serviced by each team
 
-Navigate to **USER MANAGEMENT** - **Teams** and look for your team. Scroll down to the **Queue Ranking** section and configure the East team as below
+Navigate to **USER MANAGEMENT** - **Teams** and look for your team. Scroll down to the **Queue Ranking** section and configure the **East** team as below
 
 ![rank](../assets/rank/rank_2.png)
 
@@ -109,6 +109,16 @@ This configuration allows the teams to operate like below
     Both teams see the **same** two queues and the contacts in them. 
 
 This is a harder test to simulate with one phone call. Please request help from your lab proctor if you would like to try this.
+
+1. Place both agents into "Meeting"
+2. Place the first call to the East queue
+3. Place another call to the West queue
+
+Without queue rank, when either agent becomes available the longest waiting call (in the East queue in this example) should be delivered to them. Now, with queue ranking
+
+1. Make Agent 2 (in the West team) available
+2. They will receive the call in the West queue that was placed later, first since their queue rank decides that
+3. Once Agent 2 finishes the call and goes back to available, they will receive the call from the East queue, that was placed earlier
 
 The calls to the East queue will be handled first by the East team. The same applies to the West team. If all calls in the East queue were drained and the West queue looked like below
 

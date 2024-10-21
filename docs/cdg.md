@@ -80,17 +80,17 @@ We've seen that groups of agents in teams can be associated with queues to help 
 
 This setup ensures that when a caller enters the East Coast Technical Queue, they are directed to agents in the East Coast. If you want to get more flexible, you can assign multiple teams to one queue. For instance, if the East Coast queue is often overloaded, another team can be added during configuration to expand the pool of agents.  
 
-Navigate to **Queues** and to the <w class = "attendee_out">attendeeID</w>_TechnicalSupport_East and to  **Create Group** under **Call Distribution**
+Navigate to **Queues** and to the <w class = "attendee_out">attendeeID</w>_TechnicalSupport_East under **Call Distribution**
 
 Expand the **Group**
 
 ![cdg](../assets/cdg/cdg_6.png)
 
-Edit the west coast team out from Group 1 (we are in the East Coast queue). Now add a second group
+Edit the west coast team _out_ from Group 1 (we are in the East Coast queue). Now add a second group
 
 Click **Create Group** again and 
 
-Select **Priority** as `2` and for **Switch to this group after** select `10` seconds
+Select **Priority** as `2` and for **Switch to this group after** select `10` seconds. Add the West cost team we removed from group 1 into this new group.
 
 ![queue](../assets/teams/q_4.png)
 
@@ -106,7 +106,9 @@ Now we have
 
 Calls will be offered to the team in Group 1 for 10s **before** they are presented to agents in group 2
 
-Make some phone calls, place the required agents in a not-available state and test this. For example, place call while an agent in group 1 is not available but an agent in group 2 is. The call will not be presented to the agent in group 2 until the 10 second timer has expired. In this fashion you can add many other agent teams to service the caller after a set time interval. 
+Make some phone calls, continue to use **option 1** and **choose a queue**, place the required agents in a not-available state and test this. 
+
+For example, place call while an **agent in group 1 is not available** but an agent in group 2 is. The call will not be presented to the agent in group 2 until the 10 second timer has expired. In this fashion you can add many other agent teams to service the caller after a set time interval. 
 
 !!! Note 1
     Every call distribution team expansion that happens is occurring for **a single call**. This way the treatment for every call can be programmed to make agents available based on your business needs. This is a common strategy to bring more agents to the caller. Some contact centers allow agent skills to be reprogrammed (re-skill) to handle calls they would not usually but that re-skill will be permanent until changed again. 
