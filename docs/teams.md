@@ -290,7 +290,7 @@ A "flow" defines the way the caller experiences the contact center before talkin
 
 ![team](../assets/teams/flow_2.png) the flow and 
 
-[Download](../assets/teams/MainFlow_template.json) the flow to your computer and import the flow. Right click and ```Save As``` **MainFlow_<w class = "attendee_out">attendeeID</w>** to your downloads folder
+[Download](../assets/teams/MainFlow_template.json) the flow to your computer and import the flow. Right click and ```Save link As``` **MainFlow_<w class = "attendee_out">attendeeID</w>** to your downloads folder. Save the JSON file on your computer.
 
 The name of the flow **MainFlow_template** is also embedded in the JSON file we just downloaded. If we were to import it as-is, the flow will get imported with the same name. We will need to edit the JSON file just downloaded to give it a name that is associated with your attendee ID. This is only necessary here since all lab participants are importing the same flow template and we don't want to save the same flow over others.
 
@@ -362,7 +362,7 @@ Then try again by placing the other one in "meeting"
 
 **Prepare our reports to verify call routing**
 
-Before we finish this section let's take a detour to prepare our contact center reports. Review the instructions in the [Reporting](../assets/reporting.md) section.
+Before we finish this section let's take a detour to prepare our contact center reports. Review the instructions in the [Reporting](../reporting/#) section.
 
 ### Summary
 
