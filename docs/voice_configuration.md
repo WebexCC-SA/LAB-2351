@@ -88,7 +88,7 @@ document.forms["attendee-form"][1].value = localStorage.getItem("attendeeID") ||
 5. Please ask for help when you need it
 
 !!! Note
-    Since we will be using the same Chrome browser for different roles we will use the **Chrome Browser user profiles** to allow multiple logins into the different components of the Webex contact center. For the control hub, use the Administrator profile created for you in the Chrome browser. Always offer Chrome to **remember your credentials and password** for this lab. The user profiles have been created for you - Admin, Agent 1, Agent 2 and Supervisor
+    Since we will be using the same Chrome browser for different roles we will use the **Chrome Browser profiles** to allow multiple logins into the different components of the Webex contact center. For the control hub, use the Administrator profile created for you in the Chrome browser. Always offer Chrome to **remember your credentials and password** for this lab. We will create the user profiles below - Admin, Agent 1, Agent 2 and Supervisor
 
 ![Profiles](../assets/voice_configuration/17.png)
 ![Profiles](../assets/voice_configuration/18.png)
@@ -96,7 +96,7 @@ document.forms["attendee-form"][1].value = localStorage.getItem("attendeeID") ||
 
 ### Creating Chrome user profiles
 
-Open the Windows Terminal (Windows key and type terminal). Paste and run the following code. You will see 4 new Chrome shortcut icons on the desktop
+Open the Windows Terminal (Windows key and type **Powershell**). Paste and run the following code. You will see 4 new Chrome shortcut icons on the desktop
 
 ```
 $DesktopPath = [Environment]::GetFolderPath("Desktop")
