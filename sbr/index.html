@@ -1,0 +1,1033 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="LAB-2351 - Webex Contact Center Customer Experience Voice">
+      
+      
+        <meta name="author" content="Karthik Sundaram, Rohit Harsh -">
+      
+      
+      
+        <link rel="prev" href="../rank/">
+      
+      
+        <link rel="next" href="../api/">
+      
+      
+      <link rel="icon" href="../template_assets/webex75.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.5.42">
+    
+    
+      
+        <title>Lab 4 - Attributes and Skills based routing - LAB-2351 - Webex Contact Center Customer Experience Voice</title>
+      
+    
+    
+      <link rel="stylesheet" href="../assets/stylesheets/main.0253249f.min.css">
+      
+        
+        <link rel="stylesheet" href="../assets/stylesheets/palette.06af60db.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../stylesheets/extra.css">
+    
+    <script>__md_scope=new URL("..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+   <link href="../assets/stylesheets/glightbox.min.css" rel="stylesheet"/><style>
+    html.glightbox-open { overflow: initial; height: 100%; }
+    .gslide-title { margin-top: 0px; user-select: text; }
+    .gslide-desc { color: #666; user-select: text; }
+    .gslide-image img { background: white; }
+    .gscrollbar-fixer { padding-right: 15px; }
+    .gdesc-inner { font-size: 0.75rem; }
+    body[data-md-color-scheme="slate"] .gdesc-inner { background: var(--md-default-bg-color);}
+    body[data-md-color-scheme="slate"] .gslide-title { color: var(--md-default-fg-color);}
+    body[data-md-color-scheme="slate"] .gslide-desc { color: var(--md-default-fg-color);}</style> <script src="../assets/javascripts/glightbox.min.js"></script></head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="custom" data-md-color-accent="indigo">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#learning-objectives" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow md-header--lifted" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href=".." title="LAB-2351 - Webex Contact Center Customer Experience Voice" class="md-header__button md-logo" aria-label="LAB-2351 - Webex Contact Center Customer Experience Voice" data-md-component="logo">
+      
+  <img src="../template_assets/webexLogo91.png" alt="logo">
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            LAB-2351 - Webex Contact Center Customer Experience Voice
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Lab 4 - Attributes and Skills based routing
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: light)" data-md-color-scheme="default" data-md-color-primary="custom" data-md-color-accent="indigo"  aria-label="Switch to dark mode"  type="radio" name="__palette" id="__palette_0">
+    
+      <label class="md-header__button md-icon" title="Switch to dark mode" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a4 4 0 0 0-4 4 4 4 0 0 0 4 4 4 4 0 0 0 4-4 4 4 0 0 0-4-4m0 10a6 6 0 0 1-6-6 6 6 0 0 1 6-6 6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: dark)" data-md-color-scheme="slate" data-md-color-primary="custom" data-md-color-accent="indigo"  aria-label="Switch to light mode"  type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="Switch to light mode" for="__palette_0" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 18c-.89 0-1.74-.2-2.5-.55C11.56 16.5 13 14.42 13 12s-1.44-4.5-3.5-5.45C10.26 6.2 11.11 6 12 6a6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      <label class="md-header__button md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+      </label>
+      <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+        <div class="md-search__suggest" data-md-component="search-suggest"></div>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+  </nav>
+  
+    
+      
+<nav class="md-tabs" aria-label="Tabs" data-md-component="tabs">
+  <div class="md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href=".." class="md-tabs__link">
+        
+  
+    
+  
+  Home
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+    
+  
+  
+    
+    
+      <li class="md-tabs__item md-tabs__item--active">
+        <a href="../overview/" class="md-tabs__link">
+          
+  
+    
+  
+  Lab
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../reporting/" class="md-tabs__link">
+        
+  
+    
+  
+  Reporting
+
+      </a>
+    </li>
+  
+
+      
+    </ul>
+  </div>
+</nav>
+    
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+  
+
+
+  
+
+<nav class="md-nav md-nav--primary md-nav--lifted md-nav--integrated" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href=".." title="LAB-2351 - Webex Contact Center Customer Experience Voice" class="md-nav__button md-logo" aria-label="LAB-2351 - Webex Contact Center Customer Experience Voice" data-md-component="logo">
+      
+  <img src="../template_assets/webexLogo91.png" alt="logo">
+
+    </a>
+    LAB-2351 - Webex Contact Center Customer Experience Voice
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href=".." class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Home
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+      
+        
+        
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="">
+            
+  
+  <span class="md-ellipsis">
+    Lab
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_2">
+            <span class="md-nav__icon md-icon"></span>
+            Lab
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../overview/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Overview
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../voice_configuration/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Lab 0 - Preconfiguration - Getting to know your setup
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../teams/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Lab 1 - Enhancing the caller experience
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../cdg/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Lab 2 - Call distribution groups
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../rank/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Lab 3 - Rank queues
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  <span class="md-ellipsis">
+    Lab 4 - Attributes and Skills based routing
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  <span class="md-ellipsis">
+    Lab 4 - Attributes and Skills based routing
+  </span>
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#learning-objectives" class="md-nav__link">
+    <span class="md-ellipsis">
+      Learning Objectives
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Learning Objectives">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#create-skills-based-queue" class="md-nav__link">
+    <span class="md-ellipsis">
+      Create Skills Based Queue
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#create-skill-definitions" class="md-nav__link">
+    <span class="md-ellipsis">
+      Create skill definitions
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#create-skill-profiles" class="md-nav__link">
+    <span class="md-ellipsis">
+      Create Skill Profiles
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#assign-skill-profiles-to-agents" class="md-nav__link">
+    <span class="md-ellipsis">
+      Assign skill profiles to agents
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#configuring-the-voice-flow" class="md-nav__link">
+    <span class="md-ellipsis">
+      Configuring the Voice flow
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../api/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Lab 5 - Routing based on CC metrics - APIs from flow
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../relax/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Lab 6 - Skills relaxation (optional)
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../conclusion/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Conclusion
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../reporting/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Reporting
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+  <h1>Lab 4 - Attributes and Skills based routing</h1>
+
+<script>
+ function update () {
+    const form = document.forms['attendee-form'];
+    if (form) {
+      form.addEventListener('submit', function (event) {
+        event.preventDefault();
+        const inputs = Array.from(form.querySelectorAll('input'));
+        const values = inputs.reduce((acc, input) => {
+          acc[input.id + '_out'] = input.value;
+          return acc;
+        }, {});
+
+        Object.entries(values).forEach(([id, value]) => {
+          const elements = document.getElementsByClassName(id);
+          Array.from(elements).forEach(element => {
+
+            console.log(element.innerHTML);
+            if(Number(element.innerHTML) > 99 ){
+               console.log(`Got a 99+ attendee: ${element.innerHTML}`);
+               element.innerHTML = value;
+             }
+            else{
+               console.log(`Got a sub 99 attendee: ${element.innerHTML}`);
+               if(element.innerHTML.includes('gmail.com'))
+               {
+                element.innerHTML = `0${value}`;
+                }
+               else{
+                element.innerHTML = value;
+               }
+                }
+          });
+        });
+        const attendeeIDInput = form.elements['attendeeID'];
+       if (attendeeIDInput && attendeeIDInput.value !== 'Your_Attendee_ID') {
+          localStorage.setItem('attendeeID', attendeeIDInput.value);
+        }
+      });
+    }
+  };
+</script>
+<style>
+  /* Style for the button */
+  button {
+    background-color: black; /* Set the background color to black */
+    color: white; /* Set the text color to white */
+    border: none; /* Remove the border */
+    padding: 10px 20px; /* Add some padding for better appearance */
+    cursor: pointer; /* Show a pointer cursor on hover */
+  }
+
+   /* Style for the input element */
+  input[type="text"] {
+    border: 2px solid black; /* Set the border thickness to 2px */
+    padding: 5px; /* Add some padding for better appearance */
+
+</style>
+
+<p class="block-warning">Please <strong><code>submit the form below with your Attendee or pod ID</code></strong>. All configuration entries in the lab guide will be renamed to include your pod ID.</p>
+<script>
+document.forms["attendee-form"][1].value = localStorage.getItem("attendeeID") || "Your Attendee ID" 
+</script>
+<form id="attendee-form">
+  <label for="attendee">Attendee ID:</label>
+  <input type="text" id="attendee" name="attendee" onChange="update()"><br>
+<br>
+  <button onclick="update()">Save</button>
+</form>
+
+<p><br/></p>
+<h2 id="learning-objectives">Learning Objectives</h2>
+<p>Learn about skills based routing (sometimes referred to as attribute based routing) and how it helps match the caller and the agent</p>
+<p><strong>The common caller experience</strong></p>
+<p>Imagine that you are an above average spending customer with a business. You've used their products and services for a number of years, but now need some assistance. It is natural to think <em>"With the relationship I have with the business, I deserve nothing but the best. I want someone that can understand what I need and resolve any problem I have"</em></p>
+<p>You call the contact center hoping to be prioritized and provided special treatment but think <em>"I hope I get to speak to someone that doesn't keep me on the phone for too long trying to understand what they can do to help me".</em></p>
+<p><strong>The experience of the customer service representative (agent)</strong></p>
+<p>The agent receives your call and quickly realize that your question is beyond the area of their expertise. They fear <em>"Uh oh, I've asked many clarifying questions already and I am not the best fit for this issue. I may have to ask them more questions or send this call to someone else."</em></p>
+<p>Both the customer and the agent are left wanting a better experience. They <em>both</em> feel like they deserve better.</p>
+<p><strong>Skills-based routing</strong></p>
+<p>With SBR, the solution can be configured to "know" who the caller is, what their relationship is worth and match them with the agent that has the right expertise (skills) to handle them. For the customer this is a very pleasant situation that started off by needing to call in, no one likes that. For the agent, the ability to solve a problem feels empowering.</p>
+<p><strong>Some immediate benefits of SBR</strong></p>
+<p>There is no need to create multiple queues for every possible combination of customer query. For example: English product 1 regular, Spanish product 1 regular, English product 1 premium, Spanish product 1 premium, Spanish product 1, English service 1, Spanish service 1 etc. You get the idea.</p>
+<p>Instead, we could have one smart system that matches each call to the right agent based on the skills requested. Its simpler, faster, and it frees the administrator from managing an overwhelming number of queues. <strong>One queue, many possibilities</strong></p>
+<h4 id="create-skills-based-queue">Create Skills Based Queue</h4>
+<p>Navigate to <strong>CUSTOMER EXPERIENCE</strong> - <strong>Queues</strong> and click <strong>Create Queue</strong></p>
+<p>Create a new queue SBR_TechSupport_<w class = "attendee_out">attendeeID</w></p>
+<p><a class="glightbox" href="../assets/sbr/sbr_1.png" data-type="image" data-width="100%" data-height="auto" data-title="sbr" data-desc-position="top"><img alt="sbr" src="../assets/sbr/sbr_1.png" /></a></p>
+<p>Under <strong>Call Distribution</strong> create the groups of teams like before</p>
+<p><a class="glightbox" href="../assets/sbr/sbr_2.png" data-type="image" data-width="100%" data-height="auto" data-title="sbr" data-desc-position="top"><img alt="sbr" src="../assets/sbr/sbr_2.png" /></a></p>
+<p>Keep the rest of the settings like below and click <strong>Create</strong></p>
+<p><a class="glightbox" href="../assets/sbr/sbr_3.png" data-type="image" data-width="100%" data-height="auto" data-title="sbr" data-desc-position="top"><img alt="sbr" src="../assets/sbr/sbr_3.png" /></a></p>
+<h4 id="create-skill-definitions">Create skill definitions</h4>
+<p>We will now create skill definitions, which are attributes which the caller requires, and the agent should possess to service the interaction. </p>
+<p>Webex Contact Center offers four types of skill definition.</p>
+<ol>
+<li><strong>Text:</strong> A free-form text skill that must be matched exactly. For example, you might define a skill named Extension that will let you route a call to a specific agent’s extension number based on digits entered by the caller in response to a prompt. The text value can include up to 40 characters, including spaces.</li>
+<li><strong>Proficiency:</strong> Can have a value ranging from 0 to 10 that represents the agent’s level of expertise in the skill. For example, you might define a skill for each language that your agents speak.</li>
+<li><strong>Boolean:</strong> Can have the value of True or False to indicate whether the agent has the skill. For example, you might define a skill named Premier Service to ensure that your most valuable customers get the best service. Your most experienced agents can be assigned a value of True, and your least experienced agents can be assigned a value of False.</li>
+<li><strong>Enum:</strong> A named set of predefined values. For example, a skill named Line of Business might have a set of three values: Sales, Service, and Billing. Each value can include up to 20 characters, including spaces.</li>
+</ol>
+<p>For this exercise, we will create 3 skill definitions:</p>
+<ol>
+<li><strong>CustService:</strong> To indicate the level of service which the caller requires. </li>
+<li><strong>Mobile:</strong> This will indicate the product proficiency.</li>
+<li><strong>Broadband:</strong> This will indicate the product proficiency. </li>
+</ol>
+<p>Create the skill definitions under the <strong>USER MANAGEMENT</strong> - <strong>Skill Definitions</strong></p>
+<p><a class="glightbox" href="../assets/sbr/sbr_4.png" data-type="image" data-width="100%" data-height="auto" data-title="sbr" data-desc-position="top"><img alt="sbr" src="../assets/sbr/sbr_4.png" /></a>
+<a class="glightbox" href="../assets/sbr/sbr_5.png" data-type="image" data-width="100%" data-height="auto" data-title="sbr" data-desc-position="top"><img alt="sbr" src="../assets/sbr/sbr_5.png" /></a>
+<a class="glightbox" href="../assets/sbr/sbr_6.png" data-type="image" data-width="100%" data-height="auto" data-title="sbr" data-desc-position="top"><img alt="sbr" src="../assets/sbr/sbr_6.png" /></a></p>
+<h4 id="create-skill-profiles">Create Skill Profiles</h4>
+<p>A skill profile is like a set of qualifications an agent needs for specific tasks. For example, for premium customers, you want senior agents who can access customer contracts and have top-notch customer service skills. These agents are chosen because they can provide the best experience for premium callers. You assign this set of skills to ensure the right agents handle the right customers.</p>
+<p>For this exercise, we will create three skill profiles:</p>
+<ol>
+<li><strong>Premium Care (L3) Profile:</strong> For the most senior agents (L3), who handle premium customers and can handle multiple product lines. [CustService = 10, Mobile =10, Broadband =10]</li>
+<li><strong>Advanced Support (L2) Profile:</strong> For mid-level agents (L2), who address more advanced but not top-tier queries [CustService = 5, Mobile =5, Broadband =5]</li>
+<li><strong>Basic Assist (L1) Profile:</strong> Basic Assist (L1) Profile – For entry-level agents (L1), handling routine or simple customer inquiries. [CustService = 1, Mobile =1, Broadband =1]</li>
+</ol>
+<div class="admonition tip">
+<p class="admonition-title">Tip</p>
+<p>Use your browser search (Control+F) to search and locate your attendee ID when configuring skill profiles</p>
+</div>
+<p><a class="glightbox" href="../assets/sbr/sbr_7.png" data-type="image" data-width="100%" data-height="auto" data-title="sbr" data-desc-position="top"><img alt="sbr" src="../assets/sbr/sbr_7.png" /></a>
+<a class="glightbox" href="../assets/sbr/sbr_8.png" data-type="image" data-width="100%" data-height="auto" data-title="sbr" data-desc-position="top"><img alt="sbr" src="../assets/sbr/sbr_8.png" /></a>
+<a class="glightbox" href="../assets/sbr/sbr_9.png" data-type="image" data-width="100%" data-height="auto" data-title="sbr" data-desc-position="top"><img alt="sbr" src="../assets/sbr/sbr_9.png" /></a></p>
+<h4 id="assign-skill-profiles-to-agents">Assign skill profiles to agents</h4>
+<p>Under <strong>USER MANAGEMENT</strong> - <strong>Contact center Users</strong> locate Agent<w class = "attendee_out">attendeeID</w>. Under <strong>Agent Settings</strong> assign the <w class = "attendee_out">attendeeID</w>_PremiumCareL3Profile </p>
+<p><a class="glightbox" href="../assets/sbr/sbr_10.png" data-type="image" data-width="100%" data-height="auto" data-title="sbr" data-desc-position="top"><img alt="sbr" src="../assets/sbr/sbr_10.png" /></a></p>
+<p>Similarly, assign <w class = "attendee_out">attendeeID</w>_AdvancedSupportL2Profile to Agent<w class = "attendee_out">attendeeID</w>.2 and <w class = "attendee_out">attendeeID</w>_BasicAssistL1Profile to Agent<w class = "attendee_out">attendeeID</w>.3 (Agent 3 is optional)</p>
+<table>
+<thead>
+<tr>
+<th>Agent</th>
+<th>Skill Profile</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Agent<w class = "attendee_out">attendeeID</w></td>
+<td><w class = "attendee_out">attendeeID</w>_PremiumCareL3Profile</td>
+</tr>
+<tr>
+<td>Agent<w class = "attendee_out">attendeeID</w>.2</td>
+<td><w class = "attendee_out">attendeeID</w>_AdvancedSupportL2Profile</td>
+</tr>
+<tr>
+<td>Agent<w class = "attendee_out">attendeeID</w>.3 (optional)</td>
+<td><w class = "attendee_out">attendeeID</w>_BasicAssistL1Profile</td>
+</tr>
+</tbody>
+</table>
+<h4 id="configuring-the-voice-flow">Configuring the Voice flow</h4>
+<p>Under <strong>CUSTOMER EXPERIENCE</strong> - <strong>Flows</strong> Look for MainFlow_<w class = "attendee_out">attendeeID</w></p>
+<p>Login Agent 1 and Agent 2 into the agent desktop. The example below is for attendee ID 069 (Agent 3 is optional)</p>
+<p><a class="glightbox" href="../assets/sbr/sbr_11.png" data-type="image" data-width="100%" data-height="auto" data-title="sbr" data-desc-position="top"><img alt="sbr" src="../assets/sbr/sbr_11.png" /></a></p>
+<p>Like we did in the teams-based routing lab we need to update the flow to queue to the configuration you have built. See the nodes to update in the image below</p>
+<p><a class="glightbox" href="../assets/sbr/flow_1.png" data-type="image" data-width="100%" data-height="auto" data-title="sbr" data-desc-position="top"><img alt="sbr" src="../assets/sbr/flow_1.png" /></a>
+<a class="glightbox" href="../assets/sbr/flow_2.png" data-type="image" data-width="100%" data-height="auto" data-title="sbr" data-desc-position="top"><img alt="sbr" src="../assets/sbr/flow_2.png" /></a></p>
+<p>When you change the queue in the <strong>QueueContact</strong> node the skill conditions need to be reconfigured. We'll do them for the two nodes shown below. </p>
+<p><a class="glightbox" href="../assets/sbr/flow_3.png" data-type="image" data-width="100%" data-height="auto" data-title="sbr" data-desc-position="top"><img alt="sbr" src="../assets/sbr/flow_3.png" /></a>
+<a class="glightbox" href="../assets/sbr/flow_4.png" data-type="image" data-width="100%" data-height="auto" data-title="sbr" data-desc-position="top"><img alt="sbr" src="../assets/sbr/flow_4.png" /></a></p>
+<p>Optionally, you can edit the other two <strong>QueueContact</strong> nodes to reflect the correct skills for the Broadband skill. We'll skip this in the interest of time.</p>
+<p><a class="glightbox" href="../assets/sbr/sbr_12.png" data-type="image" data-width="100%" data-height="auto" data-title="sbr" data-desc-position="top"><img alt="sbr" src="../assets/sbr/sbr_12.png" /></a></p>
+<p><strong>Option 2</strong> (skills based routing) will take you to another menu option to choose if you would like support for Mobile Service or Broadband. For this lab, we will choose <strong>Mobile service</strong> (Option 1)</p>
+<p>The <strong>Condition</strong> node that follows will check your ANI and if matched will provide a premium routing  to the caller. For the sake of this exercise, you can edit the Flow and replace the number in the <strong>Condition</strong> node for the Mobile service flow with the number you are calling from</p>
+<p><a class="glightbox" href="../assets/sbr/sbr_13.png" data-type="image" data-width="100%" data-height="auto" data-title="sbr" data-desc-position="top"><img alt="sbr" src="../assets/sbr/sbr_13.png" /></a></p>
+<p>If a match is found, then you, the caller will be sent to Agent 1, who takes care of premium customers. If you were to change the number in the condition node and repeat the test, you will notice that the caller is redirected to Agent 2 who has a L2 profile.</p>
+<table>
+<thead>
+<tr>
+<th>Call from</th>
+<th>Service category</th>
+<th>Menu option chosen</th>
+<th>skill assignment</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>ANI recognized</td>
+<td>Premium</td>
+<td>1 - Mobile Service</td>
+<td>Customer service &gt;= 10, Mobile &gt;= 10</td>
+</tr>
+<tr>
+<td>ANI NOT recognized</td>
+<td>not premium</td>
+<td>1 - Mobile Service</td>
+<td>Customer service &gt;=5, Mobile &gt;= 5</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Let's make some test calls</strong></p>
+<p>Login Agent and Agent 2 and set them in "Available" state</p>
+<p>Make a call to the EP DN for your lab and pick <strong>option 2</strong> for Skills based routing. Then choose <strong>Option 1</strong> for Mobile.</p>
+<p>When the <strong>Condition</strong> node matches the calling ANI it will route the call to the Agent that has skill level of 10. The contact will go to the best available agent. </p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>You have already created reports in the previous labs. <strong>Edit the report and add the SBR queue you created in the queue filter</strong></p>
+</div>
+<p><a class="glightbox" href="../assets/sbr/reporting_2.png" data-type="image" data-width="100%" data-height="auto" data-title="sbr" data-desc-position="top"><img alt="sbr" src="../assets/sbr/reporting_2.png" /></a>
+<a class="glightbox" href="../assets/sbr/reporting_3.png" data-type="image" data-width="100%" data-height="auto" data-title="sbr" data-desc-position="top"><img alt="sbr" src="../assets/sbr/reporting_3.png" /></a></p>
+<p>Remember to use them to view your results. While the call is waiting in queue, check the report to review the skill requirement of the caller</p>
+<p><a class="glightbox" href="../assets/sbr/reporting_1.png" data-type="image" data-width="100%" data-height="auto" data-title="sbr" data-desc-position="top"><img alt="sbr" src="../assets/sbr/reporting_1.png" /></a></p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>We were able to offer differentiated service even though the contacts were all placed in <strong>the same queue</strong>. This is because the categorization is done at a call level by identifying the service it needs through the attributes that are associated <strong>with the call</strong>. There is no need to create multiple queues for every combination of caller requirement like we did with the Teams based routing example (TechSupport East and TechSupport West queues)</p>
+</div>
+<p>This simple scenario illustrates some key concepts</p>
+<ol>
+<li><strong>Right Agent for every Call:</strong> Skills-Based Routing (SBR) ensures every caller is connected to an agent who knows exactly how to help. </li>
+<li><strong>No More Complex Queues:</strong> SBR eliminates the need for creating multiple queues for different customer and product combinations. </li>
+<li><strong>Faster Resolution, Happier Customers:</strong> By matching calls based on expertise, SBR boosts customer satisfaction and improves agent efficiency. </li>
+</ol>
+<p>Are your premium customers guaranteed the best possible service every single time? What if the queues are long and the desired service level has been missed for that caller? We can use past metrics to provide a differentiated experience when they call the next time. Let's explore how this can be accomplished in the next section</p>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"/></svg>
+  Back to top
+</button>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+    
+      
+      <nav class="md-footer__inner md-grid" aria-label="Footer" >
+        
+          
+          <a href="../rank/" class="md-footer__link md-footer__link--prev" aria-label="Previous: Lab 3 - Rank queues">
+            <div class="md-footer__button md-icon">
+              
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+            </div>
+            <div class="md-footer__title">
+              <span class="md-footer__direction">
+                Previous
+              </span>
+              <div class="md-ellipsis">
+                Lab 3 - Rank queues
+              </div>
+            </div>
+          </a>
+        
+        
+          
+          <a href="../api/" class="md-footer__link md-footer__link--next" aria-label="Next: Lab 5 - Routing based on CC metrics - APIs from flow">
+            <div class="md-footer__title">
+              <span class="md-footer__direction">
+                Next
+              </span>
+              <div class="md-ellipsis">
+                Lab 5 - Routing based on CC metrics - APIs from flow
+              </div>
+            </div>
+            <div class="md-footer__button md-icon">
+              
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11z"/></svg>
+            </div>
+          </a>
+        
+      </nav>
+    
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+    <div class="md-copyright__highlight">
+      Copyright &copy; 2024 Cisco
+    </div>
+  
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    <script id="__config" type="application/json">{"base": "..", "features": ["navigation.tabs", "navigation.tabs.sticky", "navigation.indexes", "navigation.instant", "navigation.top", "navigation.footer", "search.suggest", "content.code.copy", "toc.integrate"], "search": "../assets/javascripts/workers/search.6ce7567c.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
+    
+    
+      <script src="../assets/javascripts/bundle.83f73b43.min.js"></script>
+      
+    
+  <script id="init-glightbox">const lightbox = GLightbox({"touchNavigation": true, "loop": false, "zoomable": true, "draggable": false, "openEffect": "fade", "closeEffect": "fade", "slideEffect": "slide"});
+document$.subscribe(() => { lightbox.reload() });
+</script></body>
+</html>

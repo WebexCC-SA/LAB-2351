@@ -1,0 +1,1099 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="LAB-2351 - Webex Contact Center Customer Experience Voice">
+      
+      
+        <meta name="author" content="Karthik Sundaram, Rohit Harsh -">
+      
+      
+      
+        <link rel="prev" href="../voice_configuration/">
+      
+      
+        <link rel="next" href="../cdg/">
+      
+      
+      <link rel="icon" href="../template_assets/webex75.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.5.42">
+    
+    
+      
+        <title>Lab 1 - Enhancing the caller experience - LAB-2351 - Webex Contact Center Customer Experience Voice</title>
+      
+    
+    
+      <link rel="stylesheet" href="../assets/stylesheets/main.0253249f.min.css">
+      
+        
+        <link rel="stylesheet" href="../assets/stylesheets/palette.06af60db.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../stylesheets/extra.css">
+    
+    <script>__md_scope=new URL("..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+   <link href="../assets/stylesheets/glightbox.min.css" rel="stylesheet"/><style>
+    html.glightbox-open { overflow: initial; height: 100%; }
+    .gslide-title { margin-top: 0px; user-select: text; }
+    .gslide-desc { color: #666; user-select: text; }
+    .gslide-image img { background: white; }
+    .gscrollbar-fixer { padding-right: 15px; }
+    .gdesc-inner { font-size: 0.75rem; }
+    body[data-md-color-scheme="slate"] .gdesc-inner { background: var(--md-default-bg-color);}
+    body[data-md-color-scheme="slate"] .gslide-title { color: var(--md-default-fg-color);}
+    body[data-md-color-scheme="slate"] .gslide-desc { color: var(--md-default-fg-color);}</style> <script src="../assets/javascripts/glightbox.min.js"></script></head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="custom" data-md-color-accent="indigo">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#enhancing-the-caller-experience-the-foundation-of-call-routing-techniques" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow md-header--lifted" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href=".." title="LAB-2351 - Webex Contact Center Customer Experience Voice" class="md-header__button md-logo" aria-label="LAB-2351 - Webex Contact Center Customer Experience Voice" data-md-component="logo">
+      
+  <img src="../template_assets/webexLogo91.png" alt="logo">
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            LAB-2351 - Webex Contact Center Customer Experience Voice
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Lab 1 - Enhancing the caller experience
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: light)" data-md-color-scheme="default" data-md-color-primary="custom" data-md-color-accent="indigo"  aria-label="Switch to dark mode"  type="radio" name="__palette" id="__palette_0">
+    
+      <label class="md-header__button md-icon" title="Switch to dark mode" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a4 4 0 0 0-4 4 4 4 0 0 0 4 4 4 4 0 0 0 4-4 4 4 0 0 0-4-4m0 10a6 6 0 0 1-6-6 6 6 0 0 1 6-6 6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: dark)" data-md-color-scheme="slate" data-md-color-primary="custom" data-md-color-accent="indigo"  aria-label="Switch to light mode"  type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="Switch to light mode" for="__palette_0" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 18c-.89 0-1.74-.2-2.5-.55C11.56 16.5 13 14.42 13 12s-1.44-4.5-3.5-5.45C10.26 6.2 11.11 6 12 6a6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      <label class="md-header__button md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+      </label>
+      <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+        <div class="md-search__suggest" data-md-component="search-suggest"></div>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+  </nav>
+  
+    
+      
+<nav class="md-tabs" aria-label="Tabs" data-md-component="tabs">
+  <div class="md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href=".." class="md-tabs__link">
+        
+  
+    
+  
+  Home
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+    
+  
+  
+    
+    
+      <li class="md-tabs__item md-tabs__item--active">
+        <a href="../overview/" class="md-tabs__link">
+          
+  
+    
+  
+  Lab
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../reporting/" class="md-tabs__link">
+        
+  
+    
+  
+  Reporting
+
+      </a>
+    </li>
+  
+
+      
+    </ul>
+  </div>
+</nav>
+    
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+  
+
+
+  
+
+<nav class="md-nav md-nav--primary md-nav--lifted md-nav--integrated" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href=".." title="LAB-2351 - Webex Contact Center Customer Experience Voice" class="md-nav__button md-logo" aria-label="LAB-2351 - Webex Contact Center Customer Experience Voice" data-md-component="logo">
+      
+  <img src="../template_assets/webexLogo91.png" alt="logo">
+
+    </a>
+    LAB-2351 - Webex Contact Center Customer Experience Voice
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href=".." class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Home
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+      
+        
+        
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="">
+            
+  
+  <span class="md-ellipsis">
+    Lab
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_2">
+            <span class="md-nav__icon md-icon"></span>
+            Lab
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../overview/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Overview
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../voice_configuration/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Lab 0 - Preconfiguration - Getting to know your setup
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  <span class="md-ellipsis">
+    Lab 1 - Enhancing the caller experience
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  <span class="md-ellipsis">
+    Lab 1 - Enhancing the caller experience
+  </span>
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#enhancing-the-caller-experience-the-foundation-of-call-routing-techniques" class="md-nav__link">
+    <span class="md-ellipsis">
+      Enhancing the caller experience: The foundation of call routing techniques
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Enhancing the caller experience: The foundation of call routing techniques">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#teams-based-routing-longest-available-routing" class="md-nav__link">
+    <span class="md-ellipsis">
+      Teams based routing / Longest available routing
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#multimedia-profile" class="md-nav__link">
+    <span class="md-ellipsis">
+      Multimedia profile
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#site" class="md-nav__link">
+    <span class="md-ellipsis">
+      Site
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#teams-and-agents" class="md-nav__link">
+    <span class="md-ellipsis">
+      Teams and agents
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#setup-agents" class="md-nav__link">
+    <span class="md-ellipsis">
+      Setup Agents
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#verify-access-to-the-agent-desktop" class="md-nav__link">
+    <span class="md-ellipsis">
+      Verify access to the agent desktop
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#queues" class="md-nav__link">
+    <span class="md-ellipsis">
+      Queues
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#flow-designer" class="md-nav__link">
+    <span class="md-ellipsis">
+      Flow Designer
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#summary" class="md-nav__link">
+    <span class="md-ellipsis">
+      Summary
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../cdg/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Lab 2 - Call distribution groups
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../rank/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Lab 3 - Rank queues
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../sbr/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Lab 4 - Attributes and Skills based routing
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../api/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Lab 5 - Routing based on CC metrics - APIs from flow
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../relax/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Lab 6 - Skills relaxation (optional)
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../conclusion/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Conclusion
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../reporting/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Reporting
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+  <h1>Lab 1 - Enhancing the caller experience</h1>
+
+<script>
+ function update () {
+    const form = document.forms['attendee-form'];
+    if (form) {
+      form.addEventListener('submit', function (event) {
+        event.preventDefault();
+        const inputs = Array.from(form.querySelectorAll('input'));
+        const values = inputs.reduce((acc, input) => {
+          acc[input.id + '_out'] = input.value;
+          return acc;
+        }, {});
+
+        Object.entries(values).forEach(([id, value]) => {
+          const elements = document.getElementsByClassName(id);
+          Array.from(elements).forEach(element => {
+
+            console.log(element.innerHTML);
+            if(Number(element.innerHTML) > 99 ){
+               console.log(`Got a 99+ attendee: ${element.innerHTML}`);
+               element.innerHTML = value;
+             }
+            else{
+               console.log(`Got a sub 99 attendee: ${element.innerHTML}`);
+               if(element.innerHTML.includes('gmail.com'))
+               {
+                element.innerHTML = `0${value}`;
+                }
+               else{
+                element.innerHTML = value;
+               }
+                }
+          });
+        });
+        const attendeeIDInput = form.elements['attendeeID'];
+       if (attendeeIDInput && attendeeIDInput.value !== 'Your_Attendee_ID') {
+          localStorage.setItem('attendeeID', attendeeIDInput.value);
+        }
+      });
+    }
+  };
+</script>
+<style>
+  /* Style for the button */
+  button {
+    background-color: black; /* Set the background color to black */
+    color: white; /* Set the text color to white */
+    border: none; /* Remove the border */
+    padding: 10px 20px; /* Add some padding for better appearance */
+    cursor: pointer; /* Show a pointer cursor on hover */
+  }
+
+   /* Style for the input element */
+  input[type="text"] {
+    border: 2px solid black; /* Set the border thickness to 2px */
+    padding: 5px; /* Add some padding for better appearance */
+
+</style>
+
+<p class="block-warning">Please <strong><code>submit the form below with your Attendee or pod ID</code></strong>. All configuration entries in the lab guide will be renamed to include your pod ID.</p>
+<script>
+document.forms["attendee-form"][1].value = localStorage.getItem("attendeeID") || "Your Attendee ID" 
+</script>
+<form id="attendee-form">
+  <label for="attendee">Attendee ID:</label>
+  <input type="text" id="attendee" name="attendee" onChange="update()"><br>
+<br>
+  <button onclick="update()">Save</button>
+</form>
+
+<p><br/></p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>The input in the images that follow are only examples. They do not reflect the input you need to use in the lab exercises. In some cases, the input in the images may not follow the same attendee or pod ID from previous images. They are for representation only</p>
+</div>
+<h2 id="enhancing-the-caller-experience-the-foundation-of-call-routing-techniques">Enhancing the caller experience: The foundation of call routing techniques</h2>
+<p>Imagine you are calling your telecom provider about a technical issue. You hope to get connected with the right agent quickly. But depending on the nature of your inquiry, the system can either route you directly to a specialized technical team or to an order status team if your issue is related to a product delivery. </p>
+<h3 id="teams-based-routing-longest-available-routing">Teams based routing / Longest available routing</h3>
+<p>In this setup, specific teams are aligned to handle certain types of calls – like a technical team for troubleshooting or an order status team for inquiries about shipments. Teams-Based Routing allows us to organize agents into these groups called Teams and ensure the caller receives the right expertise. </p>
+<h3 id="multimedia-profile">Multimedia profile</h3>
+<p><strong>What is it?</strong></p>
+<p>A Multimedia Profile defines the various channels through which an agent can communicate with customers. Think of it as a toolbox filled with different tools (or channels) that agents can use to assist customers. Each tool is designed for specific tasks, making the agent more versatile and effective.</p>
+<p><strong>How does it work?</strong></p>
+<ul>
+<li><strong>Channel Assignment:</strong> Each agent can be assigned to specific channels based on their roles and preferences. For instance, one agent might handle phone calls and chats, while another might focus on emails and social media interactions.</li>
+<li><strong>Team-Based Approach:</strong> Teams can have a collective Multimedia Profile, allowing for a broader range of customer interactions. For example, a technical support team might manage both chat and phone calls, ensuring coverage across all channels.</li>
+</ul>
+<p><strong>Configuration</strong></p>
+<p>Using the <strong>Admin</strong> profile of your Chrome browser, login into Control Hub <a href="https://admin.webex.com">https://admin.webex.com</a>. </p>
+<p>Your login will be the <strong>Admin Name</strong> in the email you received. It will be of the format <strong>wxcclabs+admin_ID<w class = "attendee_out">attendeeID</w>@gmail.com</strong>. You will see another login screen with <strong>OKTA</strong> on it where you may need to enter the email address again and the password provided to you.</p>
+<p><strong>Remember to take up the offer from Chrome to save your password</strong></p>
+<p>This is the <strong>Administration interface</strong> for webex contact center and is also known as the <strong>Control Hub</strong></p>
+<p><a class="glightbox" href="../assets/teams/mmp_1.png" data-type="image" data-width="100%" data-height="auto" data-title="login into control hub" data-desc-position="top"><img alt="login into control hub" src="../assets/teams/mmp_1.png" /></a></p>
+<p>Look for the contact center option in the left pane under <strong>SERVICES – Contact Center</strong> and Click it</p>
+<p><a class="glightbox" href="../assets/teams/mmp_2.png" data-type="image" data-width="100%" data-height="auto" data-title="contact center left pane" data-desc-position="top"><img alt="contact center left pane" src="../assets/teams/mmp_2.png" /></a></p>
+<p>Navigate to <strong>DESKTOP EXPERIENCE - Multimedia Profiles</strong> and click <strong>Create Multimedia Profile</strong> on the top right corner of the page</p>
+<p><a class="glightbox" href="../assets/teams/mmp_3.png" data-type="image" data-width="100%" data-height="auto" data-title="create MMP" data-desc-position="top"><img alt="create MMP" src="../assets/teams/mmp_3.png" /></a></p>
+<p>Create a new MMP profile with a name MMP_<w class = "attendee_out">attendeeID</w> where <w class = "attendee_out">attendeeID</w> is your 3-digit attendee ID</p>
+<p><a class="glightbox" href="../assets/teams/mmp_4.png" data-type="image" data-width="100%" data-height="auto" data-title="create MMP" data-desc-position="top"><img alt="create MMP" src="../assets/teams/mmp_4.png" /></a></p>
+<p>Set the <strong>Blended</strong> in the More Details section and set the Voice to 1, Chat, Email and Social all to 3</p>
+<p>Click <strong>Create</strong></p>
+<p>You have now configured a multimedia profile for the agent to handle 1 voice and 3 each of other digital channels simultaneously.</p>
+<h3 id="site">Site</h3>
+<p><strong>What is it?</strong></p>
+<p>Consider a company operating in various regions, each with a unique geographical location where agents are based. These locations can range from bustling urban centers to quieter suburban areas, affecting how services are delivered and how agents interact with customers. The resources, technologies, and local knowledge available at each location play a crucial role in enhancing customer service.</p>
+<p><strong>Configuration</strong></p>
+<p>Under <strong>USER MANAGEMENT</strong> on the left pane navigate to <strong>Sites</strong></p>
+<p>Click <strong>Create Site</strong> on the top right corner to create a new site EastCoast_<w class = "attendee_out">attendeeID</w> and choose the <strong>Multimedia Profile</strong> you created in the previous step MMP_<w class = "attendee_out">attendeeID</w></p>
+<p>Click <strong>Create</strong></p>
+<div class="admonition tip">
+<p class="admonition-title">Tip</p>
+<p>When there is a search window or drop down list in the Control Hub interface, start typing the string you want to search to find it quickly</p>
+</div>
+<p><a class="glightbox" href="../assets/teams/site_1.png" data-type="image" data-width="100%" data-height="auto" data-title="Site" data-desc-position="top"><img alt="Site" src="../assets/teams/site_1.png" /></a></p>
+<p>Repeat the above steps to create a WestCoast_<w class = "attendee_out">attendeeID</w></p>
+<p><a class="glightbox" href="../assets/teams/site_2.png" data-type="image" data-width="100%" data-height="auto" data-title="Site" data-desc-position="top"><img alt="Site" src="../assets/teams/site_2.png" /></a></p>
+<h3 id="teams-and-agents">Teams and agents</h3>
+<p><strong>What is a team?</strong></p>
+<p>Agents who specialize in similar tasks are grouped together into <strong>Teams</strong>. For example, all the agents who handle technical issues form a Technical Team, and those who deal with order inquires make up the Order Status Team. This way, when a caller needs help, the system directs the call to the right team of experts. </p>
+<p>By organizing agents into teams, we ensure that callers are handled efficiently by agents with the right knowledge. So, if you need help fixing your phone, you’ll be connected to a technical expert instead of someone who only knows about orders. </p>
+<p>As part of this setup, when agents log in to the system, they choose the team to login which is assigned to the agent. For instance, if the agent is part of the East Technical Team, they login under that team’s profile. This way, the system knows which team they belong to and routes calls to them accordingly. </p>
+<p><strong>Configuration</strong></p>
+<p>Under <strong>USER MANAGEMENT</strong> in the left pane navigate to <strong>Teams</strong> and click <strong>Create Team.</strong>
+Create the TechnicalSupport_<w class = "attendee_out">attendeeID</w><em>East team where <w class = "attendee_out">attendeeID</w> is your pod ID. Choose the EastCoast</em><w class = "attendee_out">attendeeID</w> site and <a class="glightbox" href="../assets/teams/team_6.png" data-type="image" data-width="100%" data-height="auto" data-title="Team" data-desc-position="top"><img alt="Team" src="../assets/teams/team_6.png" /></a> and <strong>Create</strong> the team.</p>
+<p>On the next screen</p>
+<p><a class="glightbox" href="../assets/teams/workflow_1.png" data-type="image" data-width="100%" data-height="auto" data-title="Team" data-desc-position="top"><img alt="Team" src="../assets/teams/workflow_1.png" /></a></p>
+<p>click <strong>Done</strong>. We will be using a slightly different order of configuration than what is suggested in that screen</p>
+<p>Now create another TechnicalSupport_<w class = "attendee_out">attendeeID</w>_West team and assign it to the WestCoast site</p>
+<p><a class="glightbox" href="../assets/teams/team_7.png" data-type="image" data-width="100%" data-height="auto" data-title="Team" data-desc-position="top"><img alt="Team" src="../assets/teams/team_7.png" /></a></p>
+<h3 id="setup-agents">Setup Agents</h3>
+<p>Under <strong>USER MANAGEMENT</strong> in the left pane navigate to <strong>Contact Center Users</strong>.
+Search for attendeeID in the search box of the Contact Center Users page. attendeeID is your pod ID.</p>
+<p>Click on the agent created for your pod and configure them for Contact Center.</p>
+<p>Search for <w class = "attendee_out">attendeeID</w> in the search box of the Contact Center Users page. <w class = "attendee_out">attendeeID</w> is your pod ID.</p>
+<p>Enable the <strong>Contact Center</strong> toggle to reveal more fields. We have now enabled this agent with a Contact center license. Fill out the rest of the fields based on what was configured for your attendee ID.</p>
+<p>The first agent will be in the <strong>East coast</strong> site and team</p>
+<p><a class="glightbox" href="../assets/teams/agent_5.png" data-type="image" data-width="100%" data-height="auto" data-title="Agent" data-desc-position="top"><img alt="Agent" src="../assets/teams/agent_5.png" /></a></p>
+<p>Now click <strong>Save</strong></p>
+<p>Configure the same for the second Agent in the <strong>West coast</strong> site and team</p>
+<p><a class="glightbox" href="../assets/teams/agent_6.png" data-type="image" data-width="100%" data-height="auto" data-title="Agent" data-desc-position="top"><img alt="Agent" src="../assets/teams/agent_6.png" /></a></p>
+<h3 id="verify-access-to-the-agent-desktop">Verify access to the agent desktop</h3>
+<blockquote>
+<p>Please use Google Chrome as the web browser when using webRTC as the voice endpoint</p>
+</blockquote>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Since we will be using the same Chrome browser for different roles we will use the <strong>Chrome Browser user profiles</strong> to allow multiple logins into the different components of the Webex contact center. For the control hub, use the Administrator profile created for you in the Chrome browser. Always offer Chrome to <strong>remember your credentials and password</strong> for this lab</p>
+</div>
+<p>Use the different Chrome browser profiles on your desktop for each agent. </p>
+<p><strong>The agent logins are in the email with the rest of the configurations. The password is also in the same email</strong></p>
+<p><a class="glightbox" href="../assets/voice_configuration/16.png" data-type="image" data-width="100%" data-height="auto" data-title="Chrome Profiles" data-desc-position="top"><img alt="Chrome Profiles" src="../assets/voice_configuration/16.png" /></a></p>
+<p>Navigate to <strong><a href="https://desktop.wxcc-us1.cisco.com">https://desktop.wxcc-us1.cisco.com</a></strong> and login using the agent configured to the Technical_support team</p>
+<p>Remember to login using the below configurations</p>
+<p><a class="glightbox" href="../assets/teams/12.png" data-type="image" data-width="100%" data-height="auto" data-title="Agent login" data-desc-position="top"><img alt="Agent login" src="../assets/teams/12.png" /></a></p>
+<p>Accept the emergency calling notification. Allow access to the audio devices the first time you login.</p>
+<p>Once logged in click on the Agent initials on the top right to verify your successful login</p>
+<p><a class="glightbox" href="../assets/teams/13.png" data-type="image" data-width="100%" data-height="auto" data-title="Post agent login" data-desc-position="top"><img alt="Post agent login" src="../assets/teams/13.png" /></a></p>
+<p>Test the login for the other agent using their respective web browser profiles of Google Chrome. </p>
+<p>You should now have logged in two agents</p>
+<p>So far, you have accessed the Control Hub, configured agents needed for the rest of this lab exercise and logged them in with some help from the Chrome browser profiles.</p>
+<h3 id="queues">Queues</h3>
+<p>A Queue is like a virtual ordered line that callers are placed in while waiting for an agent to become available. Think of it like standing in line to enter a movie hall. The system organizes all incoming calls into different queues based on the type of request. For example, callers from east coast requiring technical support go into the TechnicalSupport_East, while those from West Coast are placed in the TechnicalSupport_West Queue. </p>
+<p>Once we’ve defined queues for different call types, we need to assign teams to handle those queues. This is done using Call Distribution Group (CDG). The Call Distribution Group allows us to assign one or more teams to a single queue. For example, both the technical teams could be associated to their respective queues. </p>
+<p><strong>Create Queues</strong></p>
+<p>Login into Control Hub https://admin.webex.com with your administrator credentials to begin our configuration.
+Navigate to <strong>Contact Center - CUSTOMER EXPERIENCE - Queues</strong> and click <strong>Create Queue.</strong></p>
+<p><a class="glightbox" href="../assets/teams/q_1.png" data-type="image" data-width="100%" data-height="auto" data-title="queue" data-desc-position="top"><img alt="queue" src="../assets/teams/q_1.png" /></a></p>
+<p>Create the <w class = "attendee_out">attendeeID</w>Q_TechSupport with the below settings (it is easier to search for queues when the attendee ID is prefixed to the queue name instead of after it)</p>
+<p><a class="glightbox" href="../assets/teams/q_2.png" data-type="image" data-width="100%" data-height="auto" data-title="queue" data-desc-position="top"><img alt="queue" src="../assets/teams/q_2.png" /></a></p>
+<div class="admonition call_distribution">
+<p class="admonition-title">Call_distribution</p>
+<p>This is a collection of one or more groups that will each contain one or more teams of agents who will answer calls from this queue.</p>
+</div>
+<p>Since our queue is for TechnicalSupport_East, we would like our team from the East coast to answer the calls first. </p>
+<p>Configure the <strong>Group</strong> like below</p>
+<p><a class="glightbox" href="../assets/teams/q_7.png" data-type="image" data-width="100%" data-height="auto" data-title="cdg" data-desc-position="top"><img alt="cdg" src="../assets/teams/q_7.png" /></a></p>
+<p><a class="glightbox" href="../assets/teams/cdg_1.png" data-type="image" data-width="100%" data-height="auto" data-title="cdg" data-desc-position="top"><img alt="cdg" src="../assets/teams/cdg_1.png" /></a></p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>It doesn't matter that West is shown above East when we expand the Call Distribution Group. They are both added to <strong>Group 1</strong> and are both <strong>Priority 1</strong></p>
+</div>
+<p>Under <strong>Advanced Settings</strong>, configure the parameters as below and click <strong>Create</strong></p>
+<p><a class="glightbox" href="../assets/teams/q_5.png" data-type="image" data-width="100%" data-height="auto" data-title="queue" data-desc-position="top"><img alt="queue" src="../assets/teams/q_5.png" /></a></p>
+<p>Repeat the same steps to configure the Technical Support Queue for the West Coast. </p>
+<p><a class="glightbox" href="../assets/teams/cdg_1.png" data-type="image" data-width="100%" data-height="auto" data-title="cdg" data-desc-position="top"><img alt="cdg" src="../assets/teams/cdg_1.png" /></a></p>
+<p>We now have two queues - TechSupport_East and TechSupport_West. Both have the east and west coast technical support teams configured under group 1</p>
+<p><a class="glightbox" href="../assets/teams/cdg_3.png" data-type="image" data-width="100%" data-height="auto" data-title="cdg" data-desc-position="top"><img alt="cdg" src="../assets/teams/cdg_3.png" /></a></p>
+<p>We will now make sure the right agents are members of the required teams</p>
+<p>Navigate to <strong>USER MANAGEMENT</strong> - <strong>Contact Center Users</strong></p>
+<p>Search for Agent<w class = "attendee_out">attendeeID</w> </p>
+<p><a class="glightbox" href="../assets/teams/cdg_4.png" data-type="image" data-width="100%" data-height="auto" data-title="cdg" data-desc-position="top"><img alt="cdg" src="../assets/teams/cdg_4.png" /></a></p>
+<p>This shows the agents and the teams they belong in. </p>
+<p>Verify that your agents are still logged in</p>
+<h3 id="flow-designer">Flow Designer</h3>
+<p>A "flow" defines the way the caller experiences the contact center before talking to an agent. The flow for voice calls is built in an interface called the <strong>Flow Designer</strong>. For this lab we have created a flow that you will all import and use for the rest of the lab. </p>
+<p><a class="glightbox" href="../assets/teams/flow_2.png" data-type="image" data-width="100%" data-height="auto" data-title="team" data-desc-position="top"><img alt="team" src="../assets/teams/flow_2.png" /></a> the flow and </p>
+<p><a href="../assets/teams/MainFlow_template.json">Download</a> the flow to your computer and import the flow. Right click and <code>Save link As</code> <strong>MainFlow_<w class = "attendee_out">attendeeID</w></strong> to your downloads folder. Save the JSON file on your computer.</p>
+<p>The name of the flow <strong>MainFlow_template</strong> is also embedded in the JSON file we just downloaded. If we were to import it as-is, the flow will get imported with the same name. We will need to edit the JSON file just downloaded to give it a name that is associated with your attendee ID. This is only necessary here since all lab participants are importing the same flow template and we don't want to save the same flow over others.</p>
+<p><a class="glightbox" href="../assets/teams/flow_3.png" data-type="image" data-width="100%" data-height="auto" data-title="team" data-desc-position="top"><img alt="team" src="../assets/teams/flow_3.png" /></a></p>
+<ol>
+<li>Open the downloaded file in nodepad++ </li>
+</ol>
+<p><a class="glightbox" href="../assets/teams/flow_5.png" data-type="image" data-width="100%" data-height="auto" data-title="team" data-desc-position="top"><img alt="team" src="../assets/teams/flow_5.png" /></a></p>
+<ol>
+<li>Replace <strong>MainFlow_template</strong> with <strong>MainFlow_<w class = "attendee_out">attendeeID</w></strong></li>
+<li>Save and close the file</li>
+</ol>
+<p>Now the file name of the flow also matches the internal identifier when it is imported into the system</p>
+<p>In <strong>CUSTOMER EXPERIENCE</strong> - <strong>Flows</strong> ensure that there is no flow for your <w class = "attendee_out">attendeeID</w>. Import the saved Flow MainFlow_<w class = "attendee_out">attendeeID</w> </p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>This lab uses only one flow and has multiple menu options to try the scenarios. There may be aspects of this flow that you don't yet understand. They will become clear as you go through the rest of this lab</p>
+</div>
+<p>From the <strong>CUSTOMER EXPERIENCE</strong> - <strong>Flows</strong> you will now be able to find the flow you just imported</p>
+<p>Remember this Flow is only a template, you need to replace some aspects of the flow with the configuration objects you created. See the image below for what needs to be changed</p>
+<p>Open the flow you just imported</p>
+<p><a class="glightbox" href="../assets/teams/flow_6.png" data-type="image" data-width="100%" data-height="auto" data-title="team" data-desc-position="top"><img alt="team" src="../assets/teams/flow_6.png" /></a></p>
+<p>You will be editing this portion of the flow. </p>
+<p><a class="glightbox" href="../assets/teams/flow_4.png" data-type="image" data-width="100%" data-height="auto" data-title="team" data-desc-position="top"><img alt="team" src="../assets/teams/flow_4.png" /></a></p>
+<p>Enable the <strong>Edit</strong> toggle on the top of the page. The toggle next to the search bar will open the parameters to edit for each node</p>
+<p><a class="glightbox" href="../assets/teams/flow_8.png" data-type="image" data-width="100%" data-height="auto" data-title="team" data-desc-position="top"><img alt="team" src="../assets/teams/flow_8.png" /></a></p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Use the magnifying glass at the bottom left corner of the page to expand and shrink the flow designer canvas</p>
+</div>
+<p>Once the flow is updated, toggle the <strong>validation</strong> button on the bottom right of the flow canvas. If there are no errors, proceed to <strong>Publish Flow</strong></p>
+<p><a class="glightbox" href="../assets/teams/flow_7.png" data-type="image" data-width="100%" data-height="auto" data-title="team" data-desc-position="top"><img alt="team" src="../assets/teams/flow_7.png" /></a></p>
+<p>In order to invoke this flow one needs to assign this flow to an entry point. Navigate to <strong>CUSTOMER EXPERIENCE</strong> - <strong>Channels</strong> and  click <strong>Create Channel</strong></p>
+<p><a class="glightbox" href="../assets/teams/channels_1.png" data-type="image" data-width="100%" data-height="auto" data-title="channels" data-desc-position="top"><img alt="channels" src="../assets/teams/channels_1.png" /></a></p>
+<p>Use the Flow you will be using in the <strong>Routing Flow</strong> field. Look up the Entry point Dial Number (EP DN) in the email you received (subject: WebexCC: Lab Access)</p>
+<p>setup the EP DN as the <strong>Support Number</strong> </p>
+<p><a class="glightbox" href="../assets/teams/channels_2.gif" data-type="image" data-width="100%" data-height="auto" data-title="channels" data-desc-position="top"><img alt="channels" src="../assets/teams/channels_2.gif" /></a></p>
+<p>Click <strong>Create</strong></p>
+<p><strong>Time to make some phone calls</strong></p>
+<p>From any device at your disposal to make calls, call the EP DN to invoke the Flow. Choose the <strong>option 1</strong> for Teams based routing. </p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>For the sake of simplicity the choice of the queue is left to you as an input. This is usually done by identifying the caller through an ANI check against a CRM or through other means.</p>
+</div>
+<p>Irrespective of which queue you are park the caller into the caller will be answered by an agent in the East or West team. You can test this by placing one of the agents into the "meeting" state from "available" and try calling.</p>
+<p>Then try again by placing the other one in "meeting"</p>
+<p><strong>Prepare our reports to verify call routing</strong></p>
+<p>Before we finish this section let's take a detour to prepare our contact center reports. Review the instructions in the <a href="../reporting/#">Reporting</a> section.</p>
+<h3 id="summary">Summary</h3>
+<p>Both teams are made available for the callers simultaneously. We did not prioritize one team over the other. For that let's try the Call Distribution Group</p>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"/></svg>
+  Back to top
+</button>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+    
+      
+      <nav class="md-footer__inner md-grid" aria-label="Footer" >
+        
+          
+          <a href="../voice_configuration/" class="md-footer__link md-footer__link--prev" aria-label="Previous: Lab 0 - Preconfiguration - Getting to know your setup">
+            <div class="md-footer__button md-icon">
+              
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+            </div>
+            <div class="md-footer__title">
+              <span class="md-footer__direction">
+                Previous
+              </span>
+              <div class="md-ellipsis">
+                Lab 0 - Preconfiguration - Getting to know your setup
+              </div>
+            </div>
+          </a>
+        
+        
+          
+          <a href="../cdg/" class="md-footer__link md-footer__link--next" aria-label="Next: Lab 2 - Call distribution groups">
+            <div class="md-footer__title">
+              <span class="md-footer__direction">
+                Next
+              </span>
+              <div class="md-ellipsis">
+                Lab 2 - Call distribution groups
+              </div>
+            </div>
+            <div class="md-footer__button md-icon">
+              
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11z"/></svg>
+            </div>
+          </a>
+        
+      </nav>
+    
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+    <div class="md-copyright__highlight">
+      Copyright &copy; 2024 Cisco
+    </div>
+  
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    <script id="__config" type="application/json">{"base": "..", "features": ["navigation.tabs", "navigation.tabs.sticky", "navigation.indexes", "navigation.instant", "navigation.top", "navigation.footer", "search.suggest", "content.code.copy", "toc.integrate"], "search": "../assets/javascripts/workers/search.6ce7567c.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
+    
+    
+      <script src="../assets/javascripts/bundle.83f73b43.min.js"></script>
+      
+    
+  <script id="init-glightbox">const lightbox = GLightbox({"touchNavigation": true, "loop": false, "zoomable": true, "draggable": false, "openEffect": "fade", "closeEffect": "fade", "slideEffect": "slide"});
+document$.subscribe(() => { lightbox.reload() });
+</script></body>
+</html>
